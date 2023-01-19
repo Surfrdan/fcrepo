@@ -43,16 +43,16 @@
                             <constantPendingMessageLimitStrategy limit="1000"/>
                         </pendingMessageLimitStrategy>
                     </policyEntry>
-                    <policyEntry queue=">" producerFlowControl="true" memoryLimit="1mb">
+                    <policyEntry queue=">" producerFlowControl="false" memoryLimit="10gb">
                         <!-- Use VM cursor for better latency
                        For more information, see:
 
                        http://activemq.apache.org/message-cursors.html
+                  -->
 
                   <pendingQueuePolicy>
                     <vmQueueCursor/>
                   </pendingQueuePolicy>
-                  -->
                     </policyEntry>
                 </policyEntries>
             </policyMap>
