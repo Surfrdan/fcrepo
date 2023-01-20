@@ -31,28 +31,14 @@
             <policyMap>
                 <policyEntries>
                     <policyEntry topic=">" producerFlowControl="true">
-                        <!-- The constantPendingMessageLimitStrategy is used to prevent
-                         slow topic consumers to block producers and affect other consumers
-                         by limiting the number of messages that are retained
-                         For more information, see:
-
-                         http://activemq.apache.org/slow-consumer-handling.html
-
-                    -->
                         <pendingMessageLimitStrategy>
                             <constantPendingMessageLimitStrategy limit="1000"/>
                         </pendingMessageLimitStrategy>
                     </policyEntry>
                     <policyEntry queue=">" producerFlowControl="false" memoryLimit="10gb">
-                        <!-- Use VM cursor for better latency
-                       For more information, see:
-
-                       http://activemq.apache.org/message-cursors.html
-                  -->
-
-                  <pendingQueuePolicy>
-                    <vmQueueCursor/>
-                  </pendingQueuePolicy>
+                        <pendingQueuePolicy>
+                            <vmQueueCursor/>
+                        </pendingQueuePolicy>
                     </policyEntry>
                 </policyEntries>
             </policyMap>
@@ -92,13 +78,13 @@
         <systemUsage>
             <systemUsage>
                 <memoryUsage>
-                    <memoryUsage limit="20 mb"/>
+                    <memoryUsage limit="2000 mb"/>
                 </memoryUsage>
                 <storeUsage>
-                    <storeUsage limit="1 gb"/>
+                    <storeUsage limit="10 gb"/>
                 </storeUsage>
                 <tempUsage>
-                    <tempUsage limit="100 mb"/>
+                    <tempUsage limit="1000 mb"/>
                 </tempUsage>
             </systemUsage>
         </systemUsage>
