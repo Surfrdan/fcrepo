@@ -14,7 +14,7 @@
   <properties>
     <!-- integration test properties -->
     <fcrepo.test.context.path>/</fcrepo.test.context.path>
-    
+
     <!-- sonar -->
     <sonar.artifact.path>${project.build.directory}${file.separator}${project.artifactId}-${project.version}.war</sonar.artifact.path>
 
