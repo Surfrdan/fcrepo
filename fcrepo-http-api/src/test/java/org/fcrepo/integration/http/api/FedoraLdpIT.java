@@ -4350,7 +4350,7 @@ public class FedoraLdpIT extends AbstractResourceIT {
 
         final List<RequestThread> successfulThreads = new ArrayList<>();
         for (final RequestThread t : threads) {
-            t.join(3000);
+            t.join(1);
             assertFalse("Thread " + t.getId() + " could not perform its operation in time!", t.isAlive());
             final int status = t.response.getStatusLine().getStatusCode();
             LOGGER.info("{} received a {} status code.", t.getId(), status);
