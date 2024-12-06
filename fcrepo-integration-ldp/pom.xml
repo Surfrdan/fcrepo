@@ -14,7 +14,7 @@
 
   <properties>
     <junit.version>4.13.1</junit.version>
-    <jetty-plugin.version>9.4.24.v20191120</jetty-plugin.version>
+    <jetty-plugin.version>12.0.15</jetty-plugin.version>
     <ldp-testsuite.version>0.1.1</ldp-testsuite.version>
     <jetty.users.file>${project.build.directory}/test-classes/jetty-users.properties</jetty.users.file>
   </properties>
@@ -94,8 +94,8 @@
 
             <!-- Launch jetty for integration testing with fedora -->
             <plugin>
-              <groupId>org.eclipse.jetty</groupId>
-              <artifactId>jetty-maven-plugin</artifactId>
+              <groupId>org.eclipse.jetty.ee10</groupId>
+              <artifactId>jetty-ee10-maven-plugin</artifactId>
               <version>${jetty-plugin.version}</version>
               <configuration>
                 <systemProperties>
@@ -137,6 +137,16 @@
                 <stopKey>STOP</stopKey>
                 <stopPort>${jetty.dynamic.stop.port}</stopPort>
                 <daemon>true</daemon>
+                <loginServices>
+                  <loginService implementation="org.eclipse.jetty.security.HashLoginService">
+                    <name>fcrepo</name>
+                    <config implementation="org.eclipse.jetty.maven.MavenResource">
+                        <resourceAsString>${jetty.users.file}</resourceAsString>
+                    </config>
+                  </loginService>
+               </loginServices>
+
+
               </configuration>
               <executions>
                 <execution>

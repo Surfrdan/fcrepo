@@ -18,7 +18,6 @@ import java.util.concurrent.Phaser;
 import org.fcrepo.kernel.api.exception.ConcurrentUpdateException;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.lock.ResourceLockManager;
-
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;

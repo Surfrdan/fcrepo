@@ -5,11 +5,10 @@
  */
 package org.fcrepo.http.commons.api.rdf;
 
-import javax.ws.rs.core.UriInfo;
-
-import org.fcrepo.kernel.api.models.FedoraResource;
+import jakarta.ws.rs.core.UriInfo;
 
 import org.apache.jena.rdf.model.Model;
+import org.fcrepo.kernel.api.models.FedoraResource;
 
 /**
  * Helper to generate an RDF model for a FedoraResourceImpl that (likely) creates

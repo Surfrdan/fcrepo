@@ -5,11 +5,11 @@
  */
 package org.fcrepo.kernel.api.observer;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-
 import java.net.URI;
 import java.time.Instant;
 import java.util.Set;
+
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 
 /**
  * A very simple abstraction to support downstream event-related machinery.

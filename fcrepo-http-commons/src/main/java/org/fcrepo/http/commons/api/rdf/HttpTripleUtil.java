@@ -9,19 +9,16 @@ import static java.util.Spliterator.IMMUTABLE;
 import static java.util.Spliterators.spliteratorUnknownSize;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.StreamSupport.stream;
-
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.Map;
 
-import javax.ws.rs.core.UriInfo;
+import jakarta.ws.rs.core.UriInfo;
 
 import org.apache.jena.rdf.model.Statement;
-
+import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.models.FedoraResource;
 import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
-import org.fcrepo.kernel.api.RdfStream;
-
 import org.slf4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

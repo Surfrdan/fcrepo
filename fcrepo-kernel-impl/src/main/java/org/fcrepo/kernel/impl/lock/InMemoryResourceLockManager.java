@@ -15,18 +15,16 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
+import com.github.benmanes.caffeine.cache.Caffeine;
+import com.google.common.collect.Sets;
 import org.fcrepo.kernel.api.exception.ConcurrentUpdateException;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.lock.ResourceLock;
 import org.fcrepo.kernel.api.lock.ResourceLockManager;
 import org.fcrepo.kernel.api.lock.ResourceLockType;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import com.github.benmanes.caffeine.cache.Caffeine;
-import com.google.common.collect.Sets;
 
 /**
  * In memory resource lock manager

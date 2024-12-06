@@ -5,11 +5,11 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
+import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 
 import java.util.Objects;
 
-import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 
 /**
  * A mapping that links the parent fedora resource to its corresponding OCFL object.

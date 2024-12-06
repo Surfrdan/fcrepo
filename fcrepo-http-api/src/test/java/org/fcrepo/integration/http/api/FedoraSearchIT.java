@@ -5,16 +5,20 @@
  */
 package org.fcrepo.integration.http.api;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPatch;
-import org.apache.http.entity.StringEntity;
-import org.fcrepo.search.api.Condition;
-import org.fcrepo.search.api.SearchResult;
-import org.junit.Test;
-import org.springframework.test.context.TestExecutionListeners;
+import static jakarta.ws.rs.core.Response.Status.BAD_REQUEST;
+import static jakarta.ws.rs.core.Response.Status.NO_CONTENT;
+import static jakarta.ws.rs.core.Response.Status.OK;
+import static org.fcrepo.kernel.api.FedoraTypes.FEDORA_ID_PREFIX;
+import static org.fcrepo.search.api.Condition.Field.CONTENT_SIZE;
+import static org.fcrepo.search.api.Condition.Field.CREATED;
+import static org.fcrepo.search.api.Condition.Field.FEDORA_ID;
+import static org.fcrepo.search.api.Condition.Field.MIME_TYPE;
+import static org.fcrepo.search.api.Condition.Field.MODIFIED;
+import static org.fcrepo.search.api.Condition.Field.RDF_TYPE;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -30,27 +34,23 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
-import static javax.ws.rs.core.Response.Status.NO_CONTENT;
-import static javax.ws.rs.core.Response.Status.OK;
-import static org.fcrepo.kernel.api.FedoraTypes.FEDORA_ID_PREFIX;
-import static org.fcrepo.search.api.Condition.Field.CONTENT_SIZE;
-import static org.fcrepo.search.api.Condition.Field.CREATED;
-import static org.fcrepo.search.api.Condition.Field.FEDORA_ID;
-import static org.fcrepo.search.api.Condition.Field.MIME_TYPE;
-import static org.fcrepo.search.api.Condition.Field.MODIFIED;
-import static org.fcrepo.search.api.Condition.Field.RDF_TYPE;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPatch;
+import org.apache.http.entity.StringEntity;
+import org.fcrepo.search.api.Condition;
+import org.fcrepo.search.api.SearchResult;
+import org.junit.Test;
+import org.springframework.test.context.TestExecutionListeners;
 
 /**
  * @author dbernstein
  * @since 05/06/20
  */
 @TestExecutionListeners(
-        listeners = { TestIsolationExecutionListener.class },
+        listeners = {TestIsolationExecutionListener.class},
         mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS)
 public class FedoraSearchIT extends AbstractResourceIT {
 

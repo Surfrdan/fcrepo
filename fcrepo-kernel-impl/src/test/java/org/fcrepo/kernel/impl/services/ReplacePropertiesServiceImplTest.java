@@ -18,6 +18,12 @@ import static org.springframework.test.util.ReflectionTestUtils.setField;
 import java.time.Instant;
 import java.util.List;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.RdfCollectors;
@@ -38,13 +44,6 @@ import org.fcrepo.kernel.impl.operations.RdfSourceOperationFactoryImpl;
 import org.fcrepo.kernel.impl.operations.UpdateRdfSourceOperation;
 import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.ResourceFactory;
-import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFDataMgr;
 import org.fcrepo.search.api.SearchIndex;
 import org.junit.Before;
 import org.junit.Test;

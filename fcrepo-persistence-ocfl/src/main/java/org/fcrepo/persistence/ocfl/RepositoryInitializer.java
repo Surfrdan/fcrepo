@@ -6,6 +6,12 @@
 package org.fcrepo.persistence.ocfl;
 
 
+import static org.fcrepo.kernel.api.RdfLexicon.BASIC_CONTAINER;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import jakarta.inject.Inject;
+
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.config.OcflPropsConfig;
 import org.fcrepo.kernel.api.TransactionManager;
@@ -26,12 +32,6 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
-
-import static org.fcrepo.kernel.api.RdfLexicon.BASIC_CONTAINER;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * This class is responsible for initializing the repository on start-up.

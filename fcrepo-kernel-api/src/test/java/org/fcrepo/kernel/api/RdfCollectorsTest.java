@@ -14,7 +14,6 @@ import java.util.List;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
-
 import org.junit.Test;
 
 /**

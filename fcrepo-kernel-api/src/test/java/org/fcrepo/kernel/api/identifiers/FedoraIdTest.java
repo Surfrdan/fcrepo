@@ -24,7 +24,6 @@ import java.util.List;
 import org.fcrepo.kernel.api.FedoraTypes;
 import org.fcrepo.kernel.api.exception.InvalidMementoPathException;
 import org.fcrepo.kernel.api.exception.InvalidResourceIdentifierException;
-
 import org.junit.Test;
 
 /**

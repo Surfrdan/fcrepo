@@ -6,9 +6,9 @@
 
 package org.fcrepo.kernel.impl.observer;
 
-import org.fcrepo.kernel.api.observer.Event;
-
 import java.util.Set;
+
+import org.fcrepo.kernel.api.observer.Event;
 
 /**
  * Stores details about an Event.

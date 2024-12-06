@@ -39,6 +39,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
+import com.github.benmanes.caffeine.cache.Caffeine;
+import org.apache.commons.io.IOUtils;
+import org.apache.jena.graph.Node;
+import org.apache.jena.graph.Triple;
+import org.apache.jena.vocabulary.DC;
 import org.fcrepo.config.DigestAlgorithm;
 import org.fcrepo.kernel.api.FedoraTypes;
 import org.fcrepo.kernel.api.RdfStream;
@@ -59,11 +64,6 @@ import org.fcrepo.storage.ocfl.DefaultOcflObjectSessionFactory;
 import org.fcrepo.storage.ocfl.OcflObjectSession;
 import org.fcrepo.storage.ocfl.OcflObjectSessionFactory;
 import org.fcrepo.storage.ocfl.cache.NoOpCache;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.jena.graph.Node;
-import org.apache.jena.graph.Triple;
-import org.apache.jena.vocabulary.DC;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -73,8 +73,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 import org.springframework.test.util.ReflectionTestUtils;
-
-import com.github.benmanes.caffeine.cache.Caffeine;
 
 /**
  * Test class for {@link OcflPersistentStorageSession}

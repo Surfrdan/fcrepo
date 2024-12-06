@@ -16,17 +16,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import org.apache.jena.graph.Triple;
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.ReadOnlyTransaction;
 import org.fcrepo.kernel.api.cache.UserTypesCache;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
-
-import org.apache.jena.graph.Triple;
 import org.springframework.stereotype.Component;
-
-import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.Caffeine;
 
 /**
  * Default UserTypesCache implementation

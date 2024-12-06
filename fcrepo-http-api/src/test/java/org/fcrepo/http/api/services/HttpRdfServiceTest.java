@@ -8,35 +8,34 @@ package org.fcrepo.http.api.services;
 import static org.fcrepo.config.ServerManagedPropsMode.STRICT;
 import static org.fcrepo.http.commons.test.util.TestHelpers.setField;
 import static org.fcrepo.kernel.api.FedoraTypes.FCR_METADATA;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 import static org.fcrepo.kernel.api.RdfCollectors.toModel;
 import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import org.apache.jena.graph.Node;
-import org.apache.jena.graph.NodeFactory;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.ResourceFactory;
-import org.apache.jena.vocabulary.DC;
-import org.apache.jena.vocabulary.DCTerms;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.UriBuilder;
-
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Resource;
-import org.junit.Before;
-import org.junit.Test;
-import java.io.InputStream;
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-import org.junit.runner.RunWith;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.UriBuilder;
 
+import org.apache.jena.graph.Node;
+import org.apache.jena.graph.NodeFactory;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.vocabulary.DC;
+import org.apache.jena.vocabulary.DCTerms;
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
-import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.RdfStream;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
 /**

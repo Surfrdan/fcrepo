@@ -5,6 +5,15 @@
  */
 package org.fcrepo.kernel.impl;
 
+import static java.util.UUID.randomUUID;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.inject.Inject;
+
 import org.fcrepo.common.db.DbTransactionExecutor;
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.kernel.api.ContainmentIndex;
@@ -25,14 +34,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.inject.Inject;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-import static java.util.UUID.randomUUID;
 
 /**
  * The Fedora Transaction Manager implementation

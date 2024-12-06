@@ -8,7 +8,6 @@ package org.fcrepo.event.serialization;
 
 import static java.time.format.DateTimeFormatter.ISO_INSTANT;
 import static java.util.stream.Collectors.toList;
-
 import static org.fcrepo.kernel.api.RdfLexicon.ACTIVITY_STREAMS_NAMESPACE;
 import static org.fcrepo.kernel.api.RdfLexicon.PROV_NAMESPACE;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -19,14 +18,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.fcrepo.kernel.api.observer.Event;
-
 import org.slf4j.Logger;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * A structure used for serializing a Event into JSON

@@ -7,9 +7,8 @@
 package org.fcrepo.kernel.impl.util;
 
 import static com.google.common.base.Strings.isNullOrEmpty;
-import static org.slf4j.LoggerFactory.getLogger;
-
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.net.URI;
 import java.net.URLEncoder;

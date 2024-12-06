@@ -23,11 +23,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+import org.fcrepo.config.DigestAlgorithm;
 import org.fcrepo.kernel.api.exception.InvalidChecksumException;
 import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
 import org.fcrepo.kernel.api.exception.UnsupportedAlgorithmException;
 import org.fcrepo.kernel.api.utils.ContentDigest;
-import org.fcrepo.config.DigestAlgorithm;
 
 /**
  * Wrapper for an InputStream that allows for the computation and evaluation

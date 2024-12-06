@@ -5,7 +5,7 @@
  */
 package org.fcrepo.jms;
 
-import static javax.jms.Session.AUTO_ACKNOWLEDGE;
+import static jakarta.jms.Session.AUTO_ACKNOWLEDGE;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
@@ -14,22 +14,19 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.util.ReflectionTestUtils.setField;
 
-import javax.jms.Connection;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageProducer;
+import jakarta.jms.Connection;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.MessageProducer;
 
+import com.google.common.eventbus.EventBus;
 import org.apache.activemq.ActiveMQConnectionFactory;
-
 import org.fcrepo.kernel.api.observer.Event;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import com.google.common.eventbus.EventBus;
 
 /**
  * <p>JMSTopicPublisherTest class.</p>
@@ -56,7 +53,7 @@ abstract class AbstractJMSPublisherTest {
     private EventBus mockBus;
 
     @Mock
-    private javax.jms.Session mockJmsSession;
+    private jakarta.jms.Session mockJmsSession;
 
     @Mock
     private Connection mockConn;

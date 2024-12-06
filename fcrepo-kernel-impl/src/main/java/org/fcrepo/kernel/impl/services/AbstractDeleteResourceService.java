@@ -10,8 +10,9 @@ import static java.lang.String.format;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
+import com.github.benmanes.caffeine.cache.Cache;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.auth.ACLHandle;
 import org.fcrepo.kernel.api.exception.PathNotFoundException;
@@ -27,11 +28,8 @@ import org.fcrepo.kernel.api.models.Tombstone;
 import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.github.benmanes.caffeine.cache.Cache;
 
 /**
  * Shared delete/purge code.

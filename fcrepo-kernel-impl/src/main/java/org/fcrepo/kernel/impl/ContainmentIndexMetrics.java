@@ -6,6 +6,9 @@
 
 package org.fcrepo.kernel.impl;
 
+import java.time.Instant;
+import java.util.stream.Stream;
+
 import io.micrometer.core.instrument.Metrics;
 import io.micrometer.core.instrument.Timer;
 import org.fcrepo.common.metrics.MetricsHelper;
@@ -15,9 +18,6 @@ import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
-import java.time.Instant;
-import java.util.stream.Stream;
 
 /**
  * ContainmentIndex wrapper for adding metrics

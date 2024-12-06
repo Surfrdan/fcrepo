@@ -5,14 +5,14 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.REINDEX;
+
 import org.fcrepo.kernel.api.operations.ReindexResourceOperation;
 import org.fcrepo.kernel.api.operations.ResourceOperation;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.fcrepo.persistence.ocfl.api.Persister;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.REINDEX;
 
 /**
  * Reindex resource rersister

@@ -5,6 +5,18 @@
  */
 package org.fcrepo.kernel.impl.models;
 
+import static java.net.URI.create;
+import static org.fcrepo.kernel.api.RdfLexicon.CONTAINER;
+import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
+import static org.fcrepo.kernel.api.RdfLexicon.RESOURCE;
+
+import java.net.URI;
+import java.time.Instant;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.impl.StatementImpl;
@@ -23,18 +35,6 @@ import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentItemNotFoundException;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
-
-import java.net.URI;
-import java.time.Instant;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static java.net.URI.create;
-import static org.fcrepo.kernel.api.RdfLexicon.CONTAINER;
-import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
-import static org.fcrepo.kernel.api.RdfLexicon.RESOURCE;
 
 /**
  * FedoraResource implementation that represents a Memento TimeMap of the base resource.

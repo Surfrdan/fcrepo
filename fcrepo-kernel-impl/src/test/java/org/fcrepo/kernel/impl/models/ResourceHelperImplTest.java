@@ -11,9 +11,9 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.util.ReflectionTestUtils.setField;
 
-import javax.inject.Inject;
-
 import java.util.UUID;
+
+import jakarta.inject.Inject;
 
 import org.fcrepo.kernel.api.ContainmentIndex;
 import org.fcrepo.kernel.api.ReadOnlyTransaction;

@@ -20,15 +20,13 @@ import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import org.fcrepo.kernel.api.exception.InvalidMementoPathException;
-import org.fcrepo.kernel.api.exception.InvalidResourceIdentifierException;
-
-import org.apache.commons.lang3.StringUtils;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.escape.Escaper;
 import com.google.common.net.PercentEscaper;
+import org.apache.commons.lang3.StringUtils;
+import org.fcrepo.kernel.api.exception.InvalidMementoPathException;
+import org.fcrepo.kernel.api.exception.InvalidResourceIdentifierException;
 
 /**
  * Class to store contextual information about a Fedora ID.

@@ -7,22 +7,22 @@ package org.fcrepo.http.commons.domain;
 
 import static java.util.Arrays.asList;
 import static java.util.Optional.ofNullable;
+import static org.fcrepo.kernel.api.RdfLexicon.EMBED_CONTAINED;
+import static org.fcrepo.kernel.api.RdfLexicon.INBOUND_REFERENCES;
 import static org.fcrepo.kernel.api.RdfLexicon.PREFER_CONTAINMENT;
 import static org.fcrepo.kernel.api.RdfLexicon.PREFER_MEMBERSHIP;
 import static org.fcrepo.kernel.api.RdfLexicon.PREFER_MINIMAL_CONTAINER;
 import static org.fcrepo.kernel.api.RdfLexicon.PREFER_SERVER_MANAGED;
-import static org.fcrepo.kernel.api.RdfLexicon.EMBED_CONTAINED;
-import static org.fcrepo.kernel.api.RdfLexicon.INBOUND_REFERENCES;
-
-import org.glassfish.jersey.message.internal.HttpHeaderReader;
-
-import javax.servlet.http.HttpServletResponse;
 
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+import jakarta.servlet.http.HttpServletResponse;
+
+import org.glassfish.jersey.message.internal.HttpHeaderReader;
 
 /**
  * Parse a single prefer tag, value and any optional parameters

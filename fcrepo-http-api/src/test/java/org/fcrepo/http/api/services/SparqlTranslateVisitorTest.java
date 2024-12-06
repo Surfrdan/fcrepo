@@ -12,18 +12,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 
-import javax.ws.rs.core.UriBuilder;
-
-import org.fcrepo.config.FedoraPropsConfig;
-import org.fcrepo.config.ServerManagedPropsMode;
-import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
-import org.fcrepo.kernel.api.identifiers.FedoraId;
+import jakarta.ws.rs.core.UriBuilder;
 
 import org.apache.jena.update.Update;
 import org.apache.jena.update.UpdateFactory;
 import org.apache.jena.update.UpdateRequest;
 import org.apache.jena.vocabulary.DCTerms;
 import org.apache.jena.vocabulary.DC_11;
+import org.fcrepo.config.FedoraPropsConfig;
+import org.fcrepo.config.ServerManagedPropsMode;
+import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

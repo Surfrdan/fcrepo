@@ -8,8 +8,12 @@ package org.fcrepo.kernel.impl.services;
 
 import static org.fcrepo.kernel.api.RdfCollectors.toModel;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.update.UpdateAction;
+import org.apache.jena.update.UpdateFactory;
+import org.apache.jena.update.UpdateRequest;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.exception.AccessDeniedException;
 import org.fcrepo.kernel.api.exception.ItemNotFoundException;
@@ -21,11 +25,6 @@ import org.fcrepo.kernel.api.services.UpdatePropertiesService;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentItemNotFoundException;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
-
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.update.UpdateAction;
-import org.apache.jena.update.UpdateFactory;
-import org.apache.jena.update.UpdateRequest;
 import org.springframework.stereotype.Component;
 
 /**

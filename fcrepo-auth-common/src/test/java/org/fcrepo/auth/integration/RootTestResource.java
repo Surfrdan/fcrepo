@@ -5,22 +5,23 @@
  */
 package org.fcrepo.auth.integration;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.net.URI;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.core.Response;
+
 import org.fcrepo.http.commons.AbstractResource;
 import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
 import org.fcrepo.kernel.api.exception.RepositoryException;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.slf4j.Logger;
 import org.springframework.context.annotation.Scope;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.core.Response;
-import java.net.URI;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * This class acts as the REST Resource endpoint against which integration tests are executed.

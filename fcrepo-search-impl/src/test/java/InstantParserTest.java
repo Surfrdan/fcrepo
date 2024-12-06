@@ -3,10 +3,10 @@
  * detailed in the LICENSE and NOTICE files at the root of the source
  * tree.
  */
+import static org.junit.Assert.assertEquals;
+
 import org.fcrepo.search.impl.InstantParser;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * @author dbernstein

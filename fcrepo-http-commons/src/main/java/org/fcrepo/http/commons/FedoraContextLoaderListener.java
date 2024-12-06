@@ -5,12 +5,12 @@
  */
 package org.fcrepo.http.commons;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+import jakarta.servlet.ServletContextEvent;
+
 import org.springframework.beans.factory.BeanDefinitionStoreException;
 import org.springframework.web.context.ContextLoaderListener;
-
-import javax.servlet.ServletContextEvent;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * This class wraps the standard Spring ContextLoaderListener in order to catch initialization errors.

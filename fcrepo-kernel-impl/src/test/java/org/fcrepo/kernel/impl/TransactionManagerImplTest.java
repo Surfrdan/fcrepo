@@ -30,7 +30,6 @@ import org.fcrepo.kernel.api.services.MembershipService;
 import org.fcrepo.kernel.api.services.ReferenceService;
 import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
-
 import org.fcrepo.search.api.SearchIndex;
 import org.junit.Before;
 import org.junit.Test;

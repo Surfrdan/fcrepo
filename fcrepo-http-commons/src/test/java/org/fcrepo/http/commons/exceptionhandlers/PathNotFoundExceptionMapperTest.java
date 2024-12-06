@@ -5,13 +5,12 @@
  */
 package org.fcrepo.http.commons.exceptionhandlers;
 
-import static javax.ws.rs.core.Response.Status.NOT_FOUND;
+import static jakarta.ws.rs.core.Response.Status.NOT_FOUND;
 import static org.junit.Assert.assertEquals;
 
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response;
 
 import org.fcrepo.kernel.api.exception.PathNotFoundException;
-
 import org.junit.Before;
 import org.junit.Test;
 

@@ -5,17 +5,16 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.UPDATE;
+
 import org.fcrepo.kernel.api.operations.NonRdfSourceOperation;
 import org.fcrepo.kernel.api.operations.ResourceOperation;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
 import org.fcrepo.storage.ocfl.OcflObjectSession;
 import org.fcrepo.storage.ocfl.ResourceHeaders;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.UPDATE;
 
 /**
  * This class implements the persistence of a NonRDFSource

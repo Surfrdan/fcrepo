@@ -5,10 +5,10 @@
  */
 package org.fcrepo.kernel.api.services;
 
+import java.util.stream.Stream;
+
 import org.apache.jena.graph.Triple;
 import org.fcrepo.kernel.api.models.FedoraResource;
-
-import java.util.stream.Stream;
 
 /**
  * Interface for a service that converts managed properties from a {@link org.fcrepo.kernel.api.models.FedoraResource}

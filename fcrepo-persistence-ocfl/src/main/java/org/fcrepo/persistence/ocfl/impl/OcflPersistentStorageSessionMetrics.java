@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.time.Instant;
 import java.util.List;
 
+import io.micrometer.core.instrument.Metrics;
+import io.micrometer.core.instrument.Timer;
 import org.fcrepo.common.metrics.MetricsHelper;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -17,9 +19,6 @@ import org.fcrepo.kernel.api.models.ResourceHeaders;
 import org.fcrepo.kernel.api.operations.ResourceOperation;
 import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
-
-import io.micrometer.core.instrument.Metrics;
-import io.micrometer.core.instrument.Timer;
 
 /**
  * PersistentStorageSession wrapper for collecting metrics

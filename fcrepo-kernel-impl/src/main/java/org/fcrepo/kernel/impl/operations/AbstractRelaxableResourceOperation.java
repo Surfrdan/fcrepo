@@ -5,18 +5,18 @@
  */
 package org.fcrepo.kernel.impl.operations;
 
+import java.time.Instant;
+
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.RelaxableResourceOperation;
-
-import java.time.Instant;
 
 /**
  * Abstract operation for a relaxable resource operations
  * @author bbpennel
  */
 public abstract class AbstractRelaxableResourceOperation extends AbstractResourceOperation
-                                                         implements RelaxableResourceOperation {
+        implements RelaxableResourceOperation {
     protected String lastModifiedBy;
 
     protected String createdBy;

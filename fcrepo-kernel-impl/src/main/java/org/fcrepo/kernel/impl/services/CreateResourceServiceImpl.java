@@ -5,8 +5,27 @@
  */
 package org.fcrepo.kernel.impl.services;
 
-import org.apache.jena.rdf.model.Model;
+import static java.util.Collections.emptyList;
+import static org.fcrepo.kernel.api.RdfLexicon.ARCHIVAL_GROUP;
+import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_NON_RDF_SOURCE_DESCRIPTION_URI;
+import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_PAIR_TREE;
+import static org.fcrepo.kernel.api.RdfLexicon.NON_RDF_SOURCE;
+import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
+import static org.slf4j.LoggerFactory.getLogger;
+import static org.springframework.util.CollectionUtils.isEmpty;
 
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import jakarta.inject.Inject;
+import jakarta.ws.rs.BadRequestException;
+import jakarta.ws.rs.core.Link;
+
+import org.apache.jena.rdf.model.Model;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.exception.CannotCreateResourceException;
@@ -29,26 +48,6 @@ import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.fcrepo.persistence.common.MultiDigestInputStreamWrapper;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
-import javax.ws.rs.BadRequestException;
-import javax.ws.rs.core.Link;
-
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static java.util.Collections.emptyList;
-import static org.fcrepo.kernel.api.RdfLexicon.ARCHIVAL_GROUP;
-import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_NON_RDF_SOURCE_DESCRIPTION_URI;
-import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_PAIR_TREE;
-import static org.fcrepo.kernel.api.RdfLexicon.NON_RDF_SOURCE;
-import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
-import static org.slf4j.LoggerFactory.getLogger;
-import static org.springframework.util.CollectionUtils.isEmpty;
 
 /**
  * Create a RdfSource resource.

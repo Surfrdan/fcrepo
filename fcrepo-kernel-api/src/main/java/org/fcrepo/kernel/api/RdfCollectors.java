@@ -7,9 +7,9 @@ package org.fcrepo.kernel.api;
 
 import java.util.stream.Collector;
 
-import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 
 /**
  * A class of Collectors for use with RdfStreams

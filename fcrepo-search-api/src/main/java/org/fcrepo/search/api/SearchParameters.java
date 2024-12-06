@@ -5,9 +5,9 @@
  */
 package org.fcrepo.search.api;
 
-import com.google.common.base.MoreObjects;
-
 import java.util.List;
+
+import com.google.common.base.MoreObjects;
 
 /**
  * A pojo encapsulating the parameters of a search

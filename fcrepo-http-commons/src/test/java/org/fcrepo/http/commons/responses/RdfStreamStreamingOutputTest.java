@@ -5,9 +5,9 @@
  */
 package org.fcrepo.http.commons.responses;
 
-import static java.util.stream.Stream.of;
 import static com.google.common.util.concurrent.Futures.addCallback;
-import static javax.ws.rs.core.MediaType.valueOf;
+import static java.util.stream.Stream.of;
+import static jakarta.ws.rs.core.MediaType.valueOf;
 import static org.apache.jena.datatypes.xsd.XSDDatatype.XSDdateTime;
 import static org.apache.jena.graph.NodeFactory.createLiteral;
 import static org.apache.jena.graph.NodeFactory.createURI;
@@ -30,28 +30,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.MediaType;
 
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.MoreExecutors;
-
-import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.riot.RiotException;
-import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
-import org.fcrepo.kernel.api.RdfStream;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.stubbing.Answer;
-import org.slf4j.Logger;
-
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
-
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.riot.RiotException;
+import org.fcrepo.kernel.api.RdfStream;
+import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
+import org.slf4j.Logger;
 
 /**
  * <p>RdfStreamStreamingOutputTest class.</p>

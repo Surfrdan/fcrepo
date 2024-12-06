@@ -10,10 +10,9 @@ import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.Collection;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.models.ResourceHeaders;
-
-import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * Helper utilities for populate resource headers

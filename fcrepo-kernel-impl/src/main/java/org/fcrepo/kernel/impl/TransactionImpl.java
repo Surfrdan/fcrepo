@@ -29,7 +29,6 @@ import org.fcrepo.kernel.api.services.MembershipService;
 import org.fcrepo.kernel.api.services.ReferenceService;
 import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.search.api.SearchIndex;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -5,6 +5,8 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.CREATE;
+
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.CreateResourceOperation;
 import org.fcrepo.kernel.api.operations.RdfSourceOperation;
@@ -15,8 +17,6 @@ import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
 import org.fcrepo.storage.ocfl.OcflObjectSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.CREATE;
 
 /**
  * This class implements the persistence of a new RDFSource

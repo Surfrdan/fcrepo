@@ -5,18 +5,18 @@
  */
 package org.fcrepo.integration.http.api;
 
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import io.ocfl.api.MutableOcflRepository;
 import org.apache.commons.io.FileUtils;
 import org.fcrepo.config.OcflPropsConfig;
 import org.fcrepo.persistence.ocfl.RepositoryInitializer;
 import org.flywaydb.core.Flyway;
 import org.springframework.test.context.TestContext;
-
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.nio.file.Files;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Listener that baselines the DB and OCFL repo between every test.

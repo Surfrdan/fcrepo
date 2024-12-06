@@ -7,15 +7,15 @@ package org.fcrepo.auth.common;
 
 import static java.util.Collections.emptySet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.servlet.http.HttpServletRequest;
-
 import java.io.Serializable;
 import java.security.Principal;
 import java.util.HashSet;
 import java.util.Set;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An example principal provider that extracts principals from request headers.

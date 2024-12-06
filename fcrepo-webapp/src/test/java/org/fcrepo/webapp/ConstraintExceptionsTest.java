@@ -5,16 +5,15 @@
  */
 package org.fcrepo.webapp;
 
-import org.fcrepo.kernel.api.exception.MultipleConstraintViolationException;
-import org.junit.Assert;
-import org.fcrepo.kernel.api.exception.ConstraintViolationException;
-import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
-
-import org.junit.Test;
-import org.reflections.Reflections;
-
 import java.io.File;
 import java.util.Set;
+
+import org.fcrepo.kernel.api.exception.ConstraintViolationException;
+import org.fcrepo.kernel.api.exception.MultipleConstraintViolationException;
+import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
+import org.junit.Assert;
+import org.junit.Test;
+import org.reflections.Reflections;
 
 /**
  * @author awoods

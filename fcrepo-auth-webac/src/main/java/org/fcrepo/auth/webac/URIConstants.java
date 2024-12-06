@@ -5,9 +5,9 @@
  */
 package org.fcrepo.auth.webac;
 
-import org.fcrepo.kernel.api.RdfLexicon;
-
 import java.net.URI;
+
+import org.fcrepo.kernel.api.RdfLexicon;
 
 /**
  * URIs used by the WebAC module.

@@ -10,11 +10,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.fcrepo.kernel.api.utils.AutoReloadingConfiguration;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import org.fcrepo.kernel.api.utils.AutoReloadingConfiguration;
 
 /**
  * Registry of RDF namespaces

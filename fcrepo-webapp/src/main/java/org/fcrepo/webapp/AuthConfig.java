@@ -9,8 +9,15 @@ package org.fcrepo.webapp;
 import java.util.HashSet;
 import java.util.List;
 
-import javax.servlet.Filter;
+import jakarta.servlet.Filter;
 
+import org.apache.shiro.realm.AuthenticatingRealm;
+import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
+import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.filter.InvalidRequestFilter;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.mgt.WebSecurityManager;
 import org.fcrepo.auth.common.ContainerRolesPrincipalProvider;
 import org.fcrepo.auth.common.DelegateHeaderPrincipalProvider;
 import org.fcrepo.auth.common.HttpHeaderPrincipalProvider;
@@ -21,14 +28,6 @@ import org.fcrepo.auth.webac.WebACAuthorizingRealm;
 import org.fcrepo.auth.webac.WebACFilter;
 import org.fcrepo.config.AuthPropsConfig;
 import org.fcrepo.config.ConditionOnPropertyTrue;
-
-import org.apache.shiro.realm.AuthenticatingRealm;
-import org.apache.shiro.realm.AuthorizingRealm;
-import org.apache.shiro.spring.LifecycleBeanPostProcessor;
-import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
-import org.apache.shiro.web.filter.InvalidRequestFilter;
-import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
-import org.apache.shiro.web.mgt.WebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -52,16 +51,19 @@ public class AuthConfig {
             super(AuthPropsConfig.FCREPO_AUTH_ENABLED, true);
         }
     }
+
     static class HeaderPrincipalEnabled extends ConditionOnPropertyTrue {
         HeaderPrincipalEnabled() {
             super(AuthPropsConfig.FCREPO_AUTH_PRINCIPAL_HEADER_ENABLED, false);
         }
     }
+
     static class RolesPrincipalEnabled extends ConditionOnPropertyTrue {
         RolesPrincipalEnabled() {
             super(AuthPropsConfig.FCREPO_AUTH_PRINCIPAL_ROLES_ENABLED, false);
         }
     }
+
     static class DelegatePrincipalEnabled extends ConditionOnPropertyTrue {
         DelegatePrincipalEnabled() {
             super(AuthPropsConfig.FCREPO_AUTH_PRINCIPAL_DELEGATE_ENABLED, true);

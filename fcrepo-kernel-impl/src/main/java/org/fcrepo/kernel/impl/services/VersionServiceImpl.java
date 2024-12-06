@@ -5,8 +5,9 @@
  */
 package org.fcrepo.kernel.impl.services;
 
-import com.google.common.annotations.VisibleForTesting;
+import jakarta.inject.Inject;
 
+import com.google.common.annotations.VisibleForTesting;
 import org.fcrepo.kernel.api.RdfLexicon;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
@@ -16,8 +17,6 @@ import org.fcrepo.kernel.api.services.VersionService;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
 
 /**
  * Implementation of {@link VersionService}

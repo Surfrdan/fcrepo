@@ -6,6 +6,12 @@
 
 package org.fcrepo.persistence.ocfl.impl;
 
+import java.io.InputStream;
+import java.time.OffsetDateTime;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.stream.Stream;
+
 import io.micrometer.core.instrument.Metrics;
 import io.micrometer.core.instrument.Timer;
 import org.fcrepo.common.lang.CheckedRunnable;
@@ -18,12 +24,6 @@ import org.fcrepo.storage.ocfl.OcflVersionInfo;
 import org.fcrepo.storage.ocfl.ResourceContent;
 import org.fcrepo.storage.ocfl.ResourceHeaders;
 import org.fcrepo.storage.ocfl.exception.NotFoundException;
-
-import java.io.InputStream;
-import java.time.OffsetDateTime;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.stream.Stream;
 
 /**
  * Wrapper around an OcflObjectSession to convert exceptions into fcrepo exceptions and time operations

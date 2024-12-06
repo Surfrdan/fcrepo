@@ -13,30 +13,27 @@ import java.net.URI;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import javax.sql.DataSource;
 
+import com.github.benmanes.caffeine.cache.Caffeine;
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.binder.cache.CaffeineCacheMetrics;
+import io.ocfl.api.MutableOcflRepository;
+import org.apache.commons.lang3.StringUtils;
 import org.fcrepo.config.MetricsConfig;
 import org.fcrepo.config.OcflPropsConfig;
 import org.fcrepo.config.Storage;
 import org.fcrepo.storage.ocfl.CommitType;
 import org.fcrepo.storage.ocfl.DefaultOcflObjectSessionFactory;
-import org.fcrepo.storage.ocfl.validation.ObjectValidator;
 import org.fcrepo.storage.ocfl.OcflObjectSessionFactory;
 import org.fcrepo.storage.ocfl.ResourceHeaders;
 import org.fcrepo.storage.ocfl.cache.Cache;
 import org.fcrepo.storage.ocfl.cache.CaffeineCache;
 import org.fcrepo.storage.ocfl.cache.NoOpCache;
-
-import org.apache.commons.lang3.StringUtils;
+import org.fcrepo.storage.ocfl.validation.ObjectValidator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.github.benmanes.caffeine.cache.Caffeine;
-
-import io.ocfl.api.MutableOcflRepository;
-import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.instrument.binder.cache.CaffeineCacheMetrics;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.http.nio.netty.NettyNioAsyncHttpClient;

@@ -12,19 +12,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-
+import io.ocfl.api.OcflOption;
+import io.ocfl.api.OcflRepository;
+import io.ocfl.api.model.ObjectVersionId;
+import io.ocfl.api.model.VersionNum;
 import org.apache.http.HttpStatus;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.TestExecutionListeners;
-
-import io.ocfl.api.OcflOption;
-import io.ocfl.api.OcflRepository;
-import io.ocfl.api.model.ObjectVersionId;
-import io.ocfl.api.model.VersionNum;
 
 /**
  * @author dbernstein

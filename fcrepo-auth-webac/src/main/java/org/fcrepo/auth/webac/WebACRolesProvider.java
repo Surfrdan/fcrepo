@@ -47,9 +47,12 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import org.apache.jena.graph.Triple;
+import org.apache.jena.rdf.model.Statement;
 import org.fcrepo.config.AuthPropsConfig;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.auth.ACLHandle;
@@ -63,13 +66,8 @@ import org.fcrepo.kernel.api.models.NonRdfSourceDescription;
 import org.fcrepo.kernel.api.models.ResourceFactory;
 import org.fcrepo.kernel.api.models.TimeMap;
 import org.fcrepo.kernel.api.models.WebacAcl;
-
-import org.apache.jena.graph.Triple;
-import org.apache.jena.rdf.model.Statement;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
-
-import com.github.benmanes.caffeine.cache.Cache;
 
 
 /**

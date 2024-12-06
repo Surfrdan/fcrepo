@@ -5,6 +5,25 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static org.apache.jena.graph.NodeFactory.createLiteral;
+import static org.apache.jena.graph.NodeFactory.createURI;
+import static org.apache.jena.rdf.model.ModelFactory.createDefaultModel;
+import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.CREATE;
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.UPDATE;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
+
+import java.io.InputStream;
+import java.time.Instant;
+import java.util.stream.Stream;
+
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
@@ -28,25 +47,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.io.InputStream;
-import java.time.Instant;
-import java.util.stream.Stream;
-
-import static org.apache.jena.graph.NodeFactory.createLiteral;
-import static org.apache.jena.graph.NodeFactory.createURI;
-import static org.apache.jena.rdf.model.ModelFactory.createDefaultModel;
-import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.CREATE;
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.UPDATE;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.withSettings;
 
 /**
  * @author dbernstein

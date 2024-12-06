@@ -9,13 +9,13 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 import static java.time.Instant.ofEpochMilli;
 import static java.util.Collections.singleton;
 import static org.fcrepo.jms.DefaultMessageFactory.BASE_URL_HEADER_NAME;
+import static org.fcrepo.jms.DefaultMessageFactory.EVENT_ID_HEADER_NAME;
 import static org.fcrepo.jms.DefaultMessageFactory.EVENT_TYPE_HEADER_NAME;
 import static org.fcrepo.jms.DefaultMessageFactory.IDENTIFIER_HEADER_NAME;
 import static org.fcrepo.jms.DefaultMessageFactory.RESOURCE_TYPE_HEADER_NAME;
 import static org.fcrepo.jms.DefaultMessageFactory.TIMESTAMP_HEADER_NAME;
 import static org.fcrepo.jms.DefaultMessageFactory.USER_AGENT_HEADER_NAME;
 import static org.fcrepo.jms.DefaultMessageFactory.USER_HEADER_NAME;
-import static org.fcrepo.jms.DefaultMessageFactory.EVENT_ID_HEADER_NAME;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
@@ -23,15 +23,13 @@ import static org.mockito.Mockito.when;
 import java.net.URI;
 import java.util.Set;
 
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.Session;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.Session;
 
 import org.apache.activemq.command.ActiveMQTextMessage;
-
 import org.fcrepo.kernel.api.observer.Event;
 import org.fcrepo.kernel.api.observer.EventType;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

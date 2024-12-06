@@ -19,16 +19,15 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.MediaType;
 
+import org.apache.jena.graph.Triple;
+import org.apache.jena.rdf.model.Model;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 import org.junit.Before;
 import org.junit.Test;
-import org.apache.jena.graph.Triple;
-import org.apache.jena.rdf.model.Model;
-
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 

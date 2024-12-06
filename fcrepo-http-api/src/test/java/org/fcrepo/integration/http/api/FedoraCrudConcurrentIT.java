@@ -5,8 +5,8 @@
  */
 package org.fcrepo.integration.http.api;
 
-import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
-import static javax.ws.rs.core.Response.Status.CREATED;
+import static jakarta.ws.rs.core.HttpHeaders.CONTENT_TYPE;
+import static jakarta.ws.rs.core.Response.Status.CREATED;
 import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;

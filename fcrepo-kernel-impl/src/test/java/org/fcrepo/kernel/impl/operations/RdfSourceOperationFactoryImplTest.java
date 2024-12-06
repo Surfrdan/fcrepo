@@ -7,6 +7,8 @@ package org.fcrepo.kernel.impl.operations;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.UUID;
+
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -17,8 +19,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.util.UUID;
 
 /**
  * @author bseeger

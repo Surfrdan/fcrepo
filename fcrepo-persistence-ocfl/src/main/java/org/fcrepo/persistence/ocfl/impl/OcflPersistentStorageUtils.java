@@ -8,13 +8,13 @@ package org.fcrepo.persistence.ocfl.impl;
 import static com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS;
 import static org.apache.jena.riot.RDFFormat.NTRIPLES;
 
-import javax.sql.DataSource;
-
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.function.Consumer;
+
+import javax.sql.DataSource;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;

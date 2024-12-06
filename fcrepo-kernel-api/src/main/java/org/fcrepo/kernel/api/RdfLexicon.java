@@ -14,11 +14,10 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import com.google.common.collect.ImmutableSet;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
-
-import com.google.common.collect.ImmutableSet;
 
 /**
  * A lexicon of the RDF properties that the fcrepo kernel (or close-to-core modules) use

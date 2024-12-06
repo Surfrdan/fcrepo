@@ -5,12 +5,12 @@
  */
 package org.fcrepo.kernel.api.operations;
 
+import java.io.InputStream;
+import java.net.URI;
+
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
-
-import java.io.InputStream;
-import java.net.URI;
 
 /**
  * Factory for constructing operations on non-rdf sources

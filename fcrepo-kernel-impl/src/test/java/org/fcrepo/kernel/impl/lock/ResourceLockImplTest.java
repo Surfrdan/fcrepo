@@ -14,7 +14,6 @@ import java.util.UUID;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.lock.ResourceLock;
 import org.fcrepo.kernel.api.lock.ResourceLockType;
-
 import org.junit.Before;
 import org.junit.Test;
 

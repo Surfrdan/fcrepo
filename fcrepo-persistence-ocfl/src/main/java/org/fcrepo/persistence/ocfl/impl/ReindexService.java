@@ -19,11 +19,13 @@ import java.util.Optional;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 
-import javax.inject.Inject;
-import javax.validation.constraints.NotNull;
+import jakarta.inject.Inject;
+import jakarta.validation.constraints.NotNull;
 
 import io.ocfl.api.OcflRepository;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.riot.RDFDataMgr;
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.kernel.api.ContainmentIndex;
 import org.fcrepo.kernel.api.RdfLexicon;
@@ -45,9 +47,6 @@ import org.fcrepo.search.api.SearchIndex;
 import org.fcrepo.search.api.SearchParameters;
 import org.fcrepo.storage.ocfl.OcflObjectSessionFactory;
 import org.fcrepo.storage.ocfl.validation.ObjectValidator;
-
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.riot.RDFDataMgr;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

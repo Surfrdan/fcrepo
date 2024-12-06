@@ -11,18 +11,16 @@ import static org.fcrepo.kernel.api.RdfLexicon.HAS_FIXITY_SERVICE;
 import static org.fcrepo.kernel.api.RdfLexicon.HAS_TRANSACTION_SERVICE;
 import static org.fcrepo.kernel.api.RdfLexicon.REPOSITORY_ROOT;
 
+import jakarta.ws.rs.core.UriInfo;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
-
 import org.fcrepo.http.api.Transactions;
 import org.fcrepo.http.commons.api.rdf.UriAwareResourceModelFactory;
 import org.fcrepo.kernel.api.models.Binary;
 import org.fcrepo.kernel.api.models.FedoraResource;
 import org.fcrepo.kernel.api.models.NonRdfSourceDescription;
-
 import org.springframework.stereotype.Component;
-
-import javax.ws.rs.core.UriInfo;
 
 /**
  * Inject our HTTP API methods into the object graphs

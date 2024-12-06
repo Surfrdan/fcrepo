@@ -17,7 +17,6 @@ import java.net.URI;
 import java.util.Collection;
 
 import org.apache.commons.io.IOUtils;
-
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.NonRdfSourceOperation;

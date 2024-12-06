@@ -5,12 +5,12 @@
  */
 package org.fcrepo.http.commons.metrics;
 
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+
 import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.exporter.MetricsServlet;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
 
 /**
  * This class is an extension of Prometheus's MetricsServlet. It only exists because there isn't an easy way to

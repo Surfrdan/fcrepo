@@ -5,12 +5,12 @@
  */
 package org.fcrepo.kernel.impl.operations;
 
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.REINDEX;
+
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.ReindexResourceOperation;
 import org.fcrepo.kernel.api.operations.ResourceOperationType;
-
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.REINDEX;
 
 
 /**

@@ -75,20 +75,22 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-webapp</artifactId>
+      <groupId>org.eclipse.jetty.ee10</groupId>
+      <artifactId>jetty-ee10-webapp</artifactId>
       <version>${jetty.version}</version>
+      <!-- -->
       <exclusions>
         <exclusion>
           <groupId>org.eclipse.jetty.orbit</groupId>
           <artifactId>javax.servlet</artifactId>
         </exclusion>
       </exclusions>
+      <!-- -->
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-servlets</artifactId>
+      <groupId>org.eclipse.jetty.ee10</groupId>
+      <artifactId>jetty-ee10-servlets</artifactId>
       <version>${jetty.version}</version>
     </dependency>
     <dependency>
@@ -234,9 +236,10 @@
       gear. Otherwise it will get loaded during test phase, but because this is
       just an API, the tests will not be able to execute. -->
     <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
       <scope>provided</scope>
+      <version>9.0.0</version>
     </dependency>
 
   </dependencies>
@@ -361,8 +364,8 @@
       </plugin>
 
       <plugin>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-maven-plugin</artifactId>
         <configuration>
           <scanIntervalSeconds>2</scanIntervalSeconds>
           <stopKey>STOP</stopKey>
@@ -376,6 +379,14 @@
               <value>${project.build.directory}/fcrepo-home</value>
             </systemProperty>
           </systemProperties>
+		  <loginServices>
+              <loginService implementation="org.eclipse.jetty.security.HashLoginService">
+                <name>fcrepo</name>
+                <config implementation="org.eclipse.jetty.maven.MavenResource">
+                    <resourceAsString>${jetty.users.file}</resourceAsString>
+                </config>
+              </loginService>
+           </loginServices>
 
         </configuration>
         <executions>

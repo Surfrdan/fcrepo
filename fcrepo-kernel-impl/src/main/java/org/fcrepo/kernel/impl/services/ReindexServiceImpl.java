@@ -5,6 +5,8 @@
  */
 package org.fcrepo.kernel.impl.services;
 
+import jakarta.inject.Inject;
+
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.TransactionManager;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -12,8 +14,6 @@ import org.fcrepo.kernel.api.operations.ReindexResourceOperationFactory;
 import org.fcrepo.kernel.api.services.ReindexService;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
 
 /**
  * Implementation of {@link org.fcrepo.kernel.api.services.ReindexService}

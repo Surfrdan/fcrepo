@@ -11,7 +11,6 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.when;
 
 import org.fcrepo.kernel.api.Transaction;
-
 import org.mockito.Mockito;
 
 /**

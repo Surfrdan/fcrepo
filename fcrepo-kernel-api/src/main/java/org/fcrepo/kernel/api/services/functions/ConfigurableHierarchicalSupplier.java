@@ -5,13 +5,15 @@
  */
 package org.fcrepo.kernel.api.services.functions;
 
-import org.springframework.stereotype.Component;
-
 import static java.util.UUID.randomUUID;
-import javax.inject.Inject;
+
 import java.util.StringJoiner;
 import java.util.stream.IntStream;
+
+import jakarta.inject.Inject;
+
 import org.fcrepo.config.FedoraPropsConfig;
+import org.springframework.stereotype.Component;
 
 /**
  * Unique value minter that creates hierarchical IDs from a UUID

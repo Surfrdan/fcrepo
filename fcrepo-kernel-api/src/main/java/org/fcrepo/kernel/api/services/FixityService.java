@@ -5,12 +5,12 @@
  */
 package org.fcrepo.kernel.api.services;
 
+import java.net.URI;
+import java.util.Collection;
+
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.exception.UnsupportedAlgorithmException;
 import org.fcrepo.kernel.api.models.Binary;
-
-import java.net.URI;
-import java.util.Collection;
 
 /**
  * Service which calculates and compares digests for binary objects

@@ -5,9 +5,21 @@
  */
 package org.fcrepo.http.api;
 
+import static jakarta.ws.rs.core.Response.noContent;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import jakarta.inject.Inject;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.OPTIONS;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.core.Response;
+
 import com.google.common.annotations.VisibleForTesting;
 import io.micrometer.core.annotation.Timed;
-
 import org.fcrepo.kernel.api.exception.PathNotFoundException;
 import org.fcrepo.kernel.api.exception.PathNotFoundRuntimeException;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -16,19 +28,6 @@ import org.fcrepo.kernel.api.models.Tombstone;
 import org.fcrepo.kernel.api.services.PurgeResourceService;
 import org.slf4j.Logger;
 import org.springframework.context.annotation.Scope;
-
-import javax.inject.Inject;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.OPTIONS;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.core.Response;
-
-import static javax.ws.rs.core.Response.noContent;
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * CRUD operations on Fedora tombstones

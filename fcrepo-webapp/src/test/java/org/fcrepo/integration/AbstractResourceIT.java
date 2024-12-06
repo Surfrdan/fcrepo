@@ -11,6 +11,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.Objects;
 
+import com.google.common.base.Strings;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -20,8 +21,6 @@ import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.Before;
 import org.slf4j.Logger;
-
-import com.google.common.base.Strings;
 
 /**
  * Base class for ITs

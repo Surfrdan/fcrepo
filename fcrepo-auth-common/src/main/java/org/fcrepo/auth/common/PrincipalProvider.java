@@ -5,11 +5,11 @@
  */
 package org.fcrepo.auth.common;
 
-import javax.servlet.Filter;
-import javax.servlet.http.HttpServletRequest;
-
 import java.security.Principal;
 import java.util.Set;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * This interface provides a way for authentication code to communicate generic

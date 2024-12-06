@@ -14,9 +14,12 @@ import static org.fcrepo.kernel.api.RdfLexicon.REPOSITORY_ROOT;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
+import java.util.UUID;
+
+import jakarta.ws.rs.core.UriInfo;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
-
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.models.Binary;
 import org.fcrepo.kernel.api.models.FedoraResource;
@@ -26,10 +29,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import javax.ws.rs.core.UriInfo;
-
-import java.util.UUID;
 
 /**
  * <p>HttpApiResourcesTest class.</p>

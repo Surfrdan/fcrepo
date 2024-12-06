@@ -12,15 +12,15 @@ import static java.util.Spliterator.IMMUTABLE;
 import static java.util.Spliterators.spliteratorUnknownSize;
 import static java.util.TimeZone.getTimeZone;
 import static java.util.stream.StreamSupport.stream;
-import static javax.ws.rs.core.HttpHeaders.ALLOW;
-import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
-import static javax.ws.rs.core.HttpHeaders.LINK;
-import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
-import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
-import static javax.ws.rs.core.Response.Status.CONFLICT;
-import static javax.ws.rs.core.Response.Status.CREATED;
-import static javax.ws.rs.core.Response.Status.NO_CONTENT;
-import static javax.ws.rs.core.Response.Status.OK;
+import static jakarta.ws.rs.core.HttpHeaders.ALLOW;
+import static jakarta.ws.rs.core.HttpHeaders.CONTENT_TYPE;
+import static jakarta.ws.rs.core.HttpHeaders.LINK;
+import static jakarta.ws.rs.core.MediaType.TEXT_PLAIN;
+import static jakarta.ws.rs.core.Response.Status.BAD_REQUEST;
+import static jakarta.ws.rs.core.Response.Status.CONFLICT;
+import static jakarta.ws.rs.core.Response.Status.CREATED;
+import static jakarta.ws.rs.core.Response.Status.NO_CONTENT;
+import static jakarta.ws.rs.core.Response.Status.OK;
 import static org.apache.jena.graph.Node.ANY;
 import static org.apache.jena.graph.NodeFactory.createLiteral;
 import static org.apache.jena.graph.NodeFactory.createLiteralByValue;
@@ -56,12 +56,8 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import javax.ws.rs.core.Link;
-import javax.xml.bind.DatatypeConverter;
-
-import org.fcrepo.config.ServerManagedPropsMode;
-import org.fcrepo.http.commons.test.util.CloseableDataset;
-import org.fcrepo.kernel.api.utils.GraphDifferencer;
+import jakarta.ws.rs.core.Link;
+import jakarta.xml.bind.DatatypeConverter;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -88,6 +84,9 @@ import org.apache.jena.riot.RDFFormat;
 import org.apache.jena.sparql.core.DatasetGraph;
 import org.apache.jena.sparql.core.Quad;
 import org.apache.jena.vocabulary.RDF;
+import org.fcrepo.config.ServerManagedPropsMode;
+import org.fcrepo.http.commons.test.util.CloseableDataset;
+import org.fcrepo.kernel.api.utils.GraphDifferencer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -100,7 +99,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners(
-        listeners = { TestIsolationExecutionListener.class },
+        listeners = {TestIsolationExecutionListener.class},
         mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS)
 public class FedoraRelaxedLdpIT extends AbstractResourceIT {
 

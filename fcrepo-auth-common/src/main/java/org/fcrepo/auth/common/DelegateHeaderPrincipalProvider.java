@@ -5,11 +5,11 @@
  */
 package org.fcrepo.auth.common;
 
-import javax.servlet.http.HttpServletRequest;
-
 import java.io.Serializable;
 import java.security.Principal;
 import java.util.Set;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.fcrepo.kernel.api.exception.RepositoryConfigurationException;
 

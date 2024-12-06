@@ -10,8 +10,10 @@ import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
 
 import java.util.Optional;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import org.apache.jena.rdf.model.Model;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.auth.ACLHandle;
@@ -29,10 +31,6 @@ import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.springframework.stereotype.Component;
-
-import org.apache.jena.rdf.model.Model;
-
-import com.github.benmanes.caffeine.cache.Cache;
 
 /**
  * Implementation of {@link WebacAclService}

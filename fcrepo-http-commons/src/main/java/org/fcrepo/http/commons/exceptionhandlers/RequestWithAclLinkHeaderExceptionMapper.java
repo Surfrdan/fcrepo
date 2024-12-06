@@ -5,20 +5,21 @@
  */
 package org.fcrepo.http.commons.exceptionhandlers;
 
-import static javax.ws.rs.core.Response.status;
-import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
+import static jakarta.ws.rs.core.Response.Status.BAD_REQUEST;
+import static jakarta.ws.rs.core.Response.status;
 import static org.fcrepo.http.commons.domain.RDFMediaType.TEXT_PLAIN_WITH_CHARSET;
 import static org.slf4j.LoggerFactory.getLogger;
+
+import jakarta.servlet.ServletContext;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.Link;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.ext.Provider;
 
 import org.fcrepo.kernel.api.exception.RequestWithAclLinkHeaderException;
 import org.slf4j.Logger;
 
-import javax.servlet.ServletContext;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.Link;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.ext.Provider;
 /**
  * @author lsitu
  * @since 2018-07-25
@@ -26,7 +27,7 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class RequestWithAclLinkHeaderExceptionMapper
         extends ConstraintExceptionMapper<RequestWithAclLinkHeaderException>
-    implements ExceptionDebugLogging {
+        implements ExceptionDebugLogging {
 
     private static final Logger LOGGER = getLogger(RequestWithAclLinkHeaderExceptionMapper.class);
 

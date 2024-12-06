@@ -5,27 +5,6 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
-import org.apache.commons.io.IOUtils;
-
-import org.fcrepo.kernel.api.Transaction;
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import org.fcrepo.kernel.api.operations.CreateResourceOperation;
-import org.fcrepo.kernel.api.operations.NonRdfSourceOperation;
-import org.fcrepo.kernel.api.operations.RdfSourceOperation;
-import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
-import org.fcrepo.storage.ocfl.OcflObjectSession;
-import org.fcrepo.storage.ocfl.ResourceHeaders;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-
 import static org.fcrepo.kernel.api.RdfLexicon.NON_RDF_SOURCE;
 import static org.fcrepo.kernel.api.operations.ResourceOperationType.UPDATE;
 import static org.fcrepo.persistence.common.ResourceHeaderUtils.newResourceHeaders;
@@ -41,6 +20,26 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+
+import org.apache.commons.io.IOUtils;
+import org.fcrepo.kernel.api.Transaction;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.fcrepo.kernel.api.operations.CreateResourceOperation;
+import org.fcrepo.kernel.api.operations.NonRdfSourceOperation;
+import org.fcrepo.kernel.api.operations.RdfSourceOperation;
+import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
+import org.fcrepo.storage.ocfl.OcflObjectSession;
+import org.fcrepo.storage.ocfl.ResourceHeaders;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 /**
  * @author whikloj

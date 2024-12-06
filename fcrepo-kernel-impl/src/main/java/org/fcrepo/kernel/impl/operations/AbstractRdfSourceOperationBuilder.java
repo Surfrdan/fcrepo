@@ -7,6 +7,7 @@ package org.fcrepo.kernel.impl.operations;
 
 import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.checkTripleForDisallowed;
 
+import org.apache.jena.rdf.model.Model;
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.Transaction;
@@ -14,14 +15,12 @@ import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.RdfSourceOperationBuilder;
 import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 
-import org.apache.jena.rdf.model.Model;
-
 /**
  * Abstract builder for interacting with an Rdf Source Operation Builder
  * @author bseeger
  */
 public abstract class AbstractRdfSourceOperationBuilder extends AbstractRelaxableResourceOperationBuilder
-                                                        implements RdfSourceOperationBuilder {
+        implements RdfSourceOperationBuilder {
 
     /**
      * Holds the stream of user's triples.

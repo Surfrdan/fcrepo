@@ -15,10 +15,9 @@ import static org.mockito.Mockito.when;
 import java.security.Principal;
 import java.util.Set;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.fcrepo.auth.common.ContainerRolesPrincipalProvider.ContainerRolesPrincipal;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -101,7 +100,7 @@ public class ContainerRolesPrincipalProviderTest {
     }
 
     /**
-     * Test for {@link ContainerRolesPrincipalProvider#getPrincipals(javax.servlet.http.HttpServletRequest)}.
+     * Test for {@link ContainerRolesPrincipalProvider#getPrincipals(jakarta.servlet.http.HttpServletRequest)}.
      */
     @Test
     public void testNoRequest() {
@@ -113,7 +112,7 @@ public class ContainerRolesPrincipalProviderTest {
     }
 
     /**
-     * Test for {@link ContainerRolesPrincipalProvider#getPrincipals(javax.servlet.http.HttpServletRequest)}.
+     * Test for {@link ContainerRolesPrincipalProvider#getPrincipals(jakarta.servlet.http.HttpServletRequest)}.
      */
     @Test
     public void testPrincipalEqualsDifferentClass() {

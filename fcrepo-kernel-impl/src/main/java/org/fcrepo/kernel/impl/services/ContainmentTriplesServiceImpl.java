@@ -5,6 +5,11 @@
  */
 package org.fcrepo.kernel.impl.services;
 
+import static org.apache.jena.graph.NodeFactory.createURI;
+import static org.fcrepo.kernel.api.RdfLexicon.CONTAINS;
+
+import java.util.stream.Stream;
+
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.fcrepo.kernel.api.ContainmentIndex;
@@ -14,11 +19,6 @@ import org.fcrepo.kernel.api.services.ContainmentTriplesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
-import java.util.stream.Stream;
-
-import static org.apache.jena.graph.NodeFactory.createURI;
-import static org.fcrepo.kernel.api.RdfLexicon.CONTAINS;
 
 /**
  * Containment Triples service.

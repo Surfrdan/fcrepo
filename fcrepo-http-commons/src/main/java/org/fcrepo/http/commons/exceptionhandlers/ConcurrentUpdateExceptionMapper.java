@@ -5,24 +5,24 @@
  */
 package org.fcrepo.http.commons.exceptionhandlers;
 
+import static jakarta.ws.rs.core.Response.status;
+import static org.fcrepo.http.commons.session.TransactionConstants.TX_PREFIX;
+import static org.fcrepo.kernel.api.FedoraTypes.FEDORA_ID_PREFIX;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import jakarta.inject.Inject;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.ext.Provider;
+
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
 import org.fcrepo.http.commons.domain.RDFMediaType;
 import org.fcrepo.http.commons.responses.ConcurrentExceptionResponse;
 import org.fcrepo.kernel.api.exception.ConcurrentUpdateException;
 import org.slf4j.Logger;
-
-import javax.inject.Inject;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.ext.ExceptionMapper;
-import javax.ws.rs.ext.Provider;
-
-import static javax.ws.rs.core.Response.status;
-import static org.fcrepo.http.commons.session.TransactionConstants.TX_PREFIX;
-import static org.fcrepo.kernel.api.FedoraTypes.FEDORA_ID_PREFIX;
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * @author pwinckles

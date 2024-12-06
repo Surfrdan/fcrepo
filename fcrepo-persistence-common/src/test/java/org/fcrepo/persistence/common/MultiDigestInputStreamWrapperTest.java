@@ -14,10 +14,11 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URI;
 import java.util.Collection;
+
 import org.apache.commons.io.IOUtils;
+import org.fcrepo.config.DigestAlgorithm;
 import org.fcrepo.kernel.api.exception.InvalidChecksumException;
 import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
-import org.fcrepo.config.DigestAlgorithm;
 import org.junit.Test;
 
 /**

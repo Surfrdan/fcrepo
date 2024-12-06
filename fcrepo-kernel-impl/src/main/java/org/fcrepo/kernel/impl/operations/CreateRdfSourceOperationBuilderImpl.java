@@ -6,7 +6,6 @@
 package org.fcrepo.kernel.impl.operations;
 
 import org.apache.jena.rdf.model.Model;
-
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.Transaction;

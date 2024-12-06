@@ -10,14 +10,12 @@ import static org.slf4j.LoggerFactory.getLogger;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import com.google.common.base.Stopwatch;
 import org.fcrepo.common.db.DbTransactionExecutor;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.TransactionManager;
-
 import org.fcrepo.persistence.api.exceptions.ObjectExistsInOcflIndexException;
 import org.slf4j.Logger;
-
-import com.google.common.base.Stopwatch;
 
 /**
  * A reindexing worker thread.

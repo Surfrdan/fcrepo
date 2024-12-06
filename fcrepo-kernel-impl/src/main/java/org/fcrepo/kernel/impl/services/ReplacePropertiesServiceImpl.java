@@ -6,8 +6,15 @@
  */
 package org.fcrepo.kernel.impl.services;
 
-import org.apache.jena.rdf.model.Model;
+import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
 
+import java.util.List;
+import java.util.Optional;
+
+import jakarta.inject.Inject;
+
+import com.github.benmanes.caffeine.cache.Cache;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.fcrepo.kernel.api.RdfLexicon;
@@ -24,15 +31,6 @@ import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
-
-import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
-
-import java.util.List;
-import java.util.Optional;
-
-import com.github.benmanes.caffeine.cache.Cache;
 
 /**
  * This class mediates update operations between the kernel and persistent storage layers

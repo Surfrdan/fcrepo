@@ -5,7 +5,7 @@
  */
 package org.fcrepo.http.commons.domain;
 
-import static javax.ws.rs.core.Variant.mediaTypes;
+import static jakarta.ws.rs.core.Variant.mediaTypes;
 import static org.apache.jena.riot.WebContent.contentTypeJSONLD;
 import static org.apache.jena.riot.WebContent.contentTypeN3;
 import static org.apache.jena.riot.WebContent.contentTypeN3Alt2;
@@ -15,8 +15,8 @@ import static org.apache.jena.riot.WebContent.contentTypeTurtle;
 
 import java.util.List;
 
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Variant;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Variant;
 
 /**
  * This is a convenience class carrying the various RDF content-type values as

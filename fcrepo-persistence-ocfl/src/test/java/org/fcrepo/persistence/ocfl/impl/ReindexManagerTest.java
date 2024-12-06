@@ -12,7 +12,6 @@ import static org.mockito.Mockito.verify;
 
 import org.fcrepo.common.db.DbTransactionExecutor;
 import org.fcrepo.kernel.api.Transaction;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

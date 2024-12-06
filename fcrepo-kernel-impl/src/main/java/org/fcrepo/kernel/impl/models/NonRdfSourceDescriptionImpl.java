@@ -5,6 +5,13 @@
  */
 package org.fcrepo.kernel.impl.models;
 
+import static org.apache.jena.graph.NodeFactory.createURI;
+import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
+
+import java.net.URI;
+import java.util.List;
+import java.util.stream.Stream;
+
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.fcrepo.kernel.api.RdfStream;
@@ -18,13 +25,6 @@ import org.fcrepo.kernel.api.models.NonRdfSourceDescription;
 import org.fcrepo.kernel.api.models.ResourceFactory;
 import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
-
-import java.net.URI;
-import java.util.List;
-import java.util.stream.Stream;
-
-import static org.apache.jena.graph.NodeFactory.createURI;
-import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
 
 /**
  * Implementation of a non-rdf source description

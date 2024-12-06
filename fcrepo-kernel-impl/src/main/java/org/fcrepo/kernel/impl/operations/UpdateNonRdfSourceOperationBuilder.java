@@ -5,11 +5,11 @@
  */
 package org.fcrepo.kernel.impl.operations;
 
-import org.fcrepo.kernel.api.Transaction;
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-
 import java.io.InputStream;
 import java.net.URI;
+
+import org.fcrepo.kernel.api.Transaction;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 
 /**
  * Builder for operations to update non-rdf sources

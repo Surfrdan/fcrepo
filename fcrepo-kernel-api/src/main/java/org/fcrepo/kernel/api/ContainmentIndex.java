@@ -5,11 +5,12 @@
  */
 package org.fcrepo.kernel.api;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import javax.annotation.Nonnull;
-
 import java.time.Instant;
 import java.util.stream.Stream;
+
+import jakarta.annotation.Nonnull;
+
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 
 /**
  * An interface for retrieving resource IDs by their containment relationships.

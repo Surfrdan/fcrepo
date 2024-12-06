@@ -5,12 +5,39 @@
  */
 package org.fcrepo.kernel.impl.services;
 
+import static org.apache.jena.graph.NodeFactory.createURI;
+import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
+import static org.apache.jena.rdf.model.ResourceFactory.createResource;
+import static org.apache.jena.rdf.model.ResourceFactory.createStatement;
+import static org.fcrepo.kernel.api.FedoraTypes.FCR_ACL;
+import static org.fcrepo.kernel.api.RdfLexicon.DEFAULT_INTERACTION_MODEL;
+import static org.fcrepo.kernel.api.RdfLexicon.HAS_MEMBER_RELATION;
+import static org.fcrepo.kernel.api.RdfLexicon.INSERTED_CONTENT_RELATION;
+import static org.fcrepo.kernel.api.RdfLexicon.INTERACTION_MODELS_FULL;
+import static org.fcrepo.kernel.api.RdfLexicon.IS_MEMBER_OF_RELATION;
+import static org.fcrepo.kernel.api.RdfLexicon.MEMBERSHIP_RESOURCE;
+import static org.fcrepo.kernel.api.RdfLexicon.NON_RDF_SOURCE;
+import static org.fcrepo.kernel.api.RdfLexicon.WEBAC_ACCESS_TO;
+import static org.fcrepo.kernel.api.RdfLexicon.WEBAC_ACCESS_TO_CLASS;
+import static org.fcrepo.kernel.api.RdfLexicon.WEBAC_ACCESS_TO_PROPERTY;
+import static org.fcrepo.kernel.api.RdfLexicon.isManagedPredicate;
+import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Pattern;
+
+import jakarta.inject.Inject;
+
 import org.apache.jena.graph.Graph;
 import org.apache.jena.graph.Node;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Statement;
-
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.kernel.api.ContainmentIndex;
 import org.fcrepo.kernel.api.RdfLexicon;
@@ -30,33 +57,6 @@ import org.fcrepo.search.api.SearchIndex;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import javax.inject.Inject;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.regex.Pattern;
-
-import static org.apache.jena.graph.NodeFactory.createURI;
-import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
-import static org.apache.jena.rdf.model.ResourceFactory.createResource;
-import static org.apache.jena.rdf.model.ResourceFactory.createStatement;
-import static org.fcrepo.kernel.api.FedoraTypes.FCR_ACL;
-import static org.fcrepo.kernel.api.RdfLexicon.DEFAULT_INTERACTION_MODEL;
-import static org.fcrepo.kernel.api.RdfLexicon.HAS_MEMBER_RELATION;
-import static org.fcrepo.kernel.api.RdfLexicon.INSERTED_CONTENT_RELATION;
-import static org.fcrepo.kernel.api.RdfLexicon.INTERACTION_MODELS_FULL;
-import static org.fcrepo.kernel.api.RdfLexicon.IS_MEMBER_OF_RELATION;
-import static org.fcrepo.kernel.api.RdfLexicon.MEMBERSHIP_RESOURCE;
-import static org.fcrepo.kernel.api.RdfLexicon.NON_RDF_SOURCE;
-import static org.fcrepo.kernel.api.RdfLexicon.WEBAC_ACCESS_TO;
-import static org.fcrepo.kernel.api.RdfLexicon.WEBAC_ACCESS_TO_CLASS;
-import static org.fcrepo.kernel.api.RdfLexicon.WEBAC_ACCESS_TO_PROPERTY;
-import static org.fcrepo.kernel.api.RdfLexicon.isManagedPredicate;
-import static org.fcrepo.kernel.api.rdf.DefaultRdfStream.fromModel;
-import static org.slf4j.LoggerFactory.getLogger;
 
 
 /**

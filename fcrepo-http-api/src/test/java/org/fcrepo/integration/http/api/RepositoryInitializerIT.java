@@ -5,6 +5,15 @@
  */
 package org.fcrepo.integration.http.api;
 
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.fcrepo.kernel.api.RdfLexicon.MEMENTO_TYPE;
+import static org.junit.Assert.assertEquals;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.net.ConnectException;
+
+import jakarta.ws.rs.core.Link;
+
 import org.apache.http.NoHttpResponseException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -21,14 +30,6 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
-
-import javax.ws.rs.core.Link;
-import java.net.ConnectException;
-
-import static org.apache.http.HttpStatus.SC_OK;
-import static org.fcrepo.kernel.api.RdfLexicon.MEMENTO_TYPE;
-import static org.junit.Assert.assertEquals;
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * @author dbernstein

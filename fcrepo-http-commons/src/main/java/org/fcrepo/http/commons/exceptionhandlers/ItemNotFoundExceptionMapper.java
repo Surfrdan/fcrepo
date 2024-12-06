@@ -5,14 +5,14 @@
  */
 package org.fcrepo.http.commons.exceptionhandlers;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.ext.Provider;
+
 import org.fcrepo.kernel.api.exception.ItemNotFoundException;
 import org.slf4j.Logger;
-
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
-import javax.ws.rs.ext.Provider;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 
 /**

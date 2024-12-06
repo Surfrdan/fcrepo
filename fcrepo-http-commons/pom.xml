@@ -14,10 +14,10 @@
     <osgi.import.packages>
       org.fcrepo.kernel.api
 
-      javax.annotation,
-      javax.inject,
-      javax.servlet.http,
-      javax.ws.rs.*,
+      jakarta.annotation,
+      jakarta.inject,
+      jakarta.servlet.http,
+      jakarta.ws.rs.*,
       
       com.fasterxml.jackson.core,
       org.apache.jena.*,
@@ -82,7 +82,14 @@
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-server</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>jakarta.activation</groupId>
+          <artifactId>jakarta.activation-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
+
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
@@ -119,6 +126,12 @@
     <dependency>
       <groupId>org.glassfish.jersey.test-framework.providers</groupId>
       <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.code.findbugs</groupId>
+          <artifactId>jsr305</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -183,8 +196,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>9.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.velocity</groupId>
@@ -197,13 +211,15 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
+      <groupId>jakarta.annotation</groupId>
+      <artifactId>jakarta.annotation-api</artifactId>
       <scope>test</scope>
+      <version>3.0.0</version>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.1.0</version>
     </dependency>
 
     <dependency>
@@ -246,7 +262,7 @@
           <artifactId>struts-tiles</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>javax.servlet</groupId>
+          <groupId>jakarta.servlet</groupId>
           <artifactId>servlet-api</artifactId>
         </exclusion>
       </exclusions>
@@ -292,17 +308,27 @@
     </dependency>
     <!--  modules needed for Java 11 support EE modules. -->
     <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>4.0.2</version>
     </dependency>
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.sun.xml.bind</groupId>
-      <artifactId>jaxb-impl</artifactId>
-    </dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <version>4.0.5</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+
   </dependencies>
 
   <build>

@@ -14,16 +14,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.fcrepo.config.FedoraPropsConfig;
-import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
-import org.fcrepo.kernel.api.exception.ConstraintViolationException;
-import org.fcrepo.kernel.api.exception.MultipleConstraintViolationException;
-import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
-import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
-import org.fcrepo.kernel.api.exception.ServerManagedPropertyException;
-import org.fcrepo.kernel.api.exception.ServerManagedTypeException;
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
 import org.apache.jena.graph.Triple;
@@ -43,6 +33,15 @@ import org.apache.jena.sparql.syntax.ElementPathBlock;
 import org.apache.jena.update.Update;
 import org.apache.jena.update.UpdateFactory;
 import org.apache.jena.update.UpdateRequest;
+import org.fcrepo.config.FedoraPropsConfig;
+import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
+import org.fcrepo.kernel.api.exception.ConstraintViolationException;
+import org.fcrepo.kernel.api.exception.MultipleConstraintViolationException;
+import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
+import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
+import org.fcrepo.kernel.api.exception.ServerManagedPropertyException;
+import org.fcrepo.kernel.api.exception.ServerManagedTypeException;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.slf4j.Logger;
 
 /**

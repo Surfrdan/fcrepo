@@ -149,8 +149,9 @@
          gear. Otherwise it will get loaded during test phase, but because this is
          just an API, the tests will not be able to execute. -->
     <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>9.0.0</version>
     </dependency>
   </dependencies>
 </project>

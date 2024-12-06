@@ -5,12 +5,11 @@
  */
 package org.fcrepo.integration.http.api;
 
-import static javax.ws.rs.core.Response.Status.METHOD_NOT_ALLOWED;
-import static javax.ws.rs.core.Response.Status.OK;
+import static jakarta.ws.rs.core.Response.Status.CREATED;
+import static jakarta.ws.rs.core.Response.Status.METHOD_NOT_ALLOWED;
+import static jakarta.ws.rs.core.Response.Status.OK;
 import static org.apache.jena.graph.Node.ANY;
 import static org.apache.jena.graph.NodeFactory.createLiteral;
-import static javax.ws.rs.core.Response.Status.CREATED;
-
 import static org.fcrepo.kernel.api.FedoraTypes.FCR_FIXITY;
 import static org.fcrepo.kernel.api.RdfLexicon.HAS_FIXITY_RESULT;
 import static org.fcrepo.kernel.api.RdfLexicon.HAS_FIXITY_STATE;
@@ -32,20 +31,17 @@ import io.ocfl.api.OcflRepository;
 import io.ocfl.api.model.ObjectVersionId;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
-
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
-import org.apache.jena.sparql.core.Quad;
-import org.fcrepo.config.OcflPropsConfig;
-import org.fcrepo.http.commons.test.util.CloseableDataset;
-
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import org.junit.Before;
-import org.junit.Test;
-
 import org.apache.jena.datatypes.RDFDatatype;
 import org.apache.jena.datatypes.TypeMapper;
 import org.apache.jena.sparql.core.DatasetGraph;
+import org.apache.jena.sparql.core.Quad;
+import org.fcrepo.config.OcflPropsConfig;
+import org.fcrepo.http.commons.test.util.CloseableDataset;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.test.context.TestExecutionListeners;
 
 /**
@@ -55,7 +51,7 @@ import org.springframework.test.context.TestExecutionListeners;
  * @author ajs6f
  */
 @TestExecutionListeners(
-        listeners = { TestIsolationExecutionListener.class },
+        listeners = {TestIsolationExecutionListener.class},
         mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS)
 public class FedoraFixityIT extends AbstractResourceIT {
 

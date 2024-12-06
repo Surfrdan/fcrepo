@@ -5,8 +5,12 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
-import io.ocfl.api.OcflRepository;
+import java.time.Duration;
+import java.time.Instant;
 
+import jakarta.inject.Inject;
+
+import io.ocfl.api.OcflRepository;
 import org.fcrepo.common.db.DbTransactionExecutor;
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.config.OcflPropsConfig;
@@ -22,10 +26,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
-import java.time.Duration;
-import java.time.Instant;
 
 /**
  * An implementation of {@link IndexBuilder}.  This implementation rebuilds the following indexable state derived

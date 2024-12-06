@@ -5,14 +5,14 @@
  */
 package org.fcrepo.http.commons.exceptionhandlers;
 
-import static org.junit.Assert.assertEquals;
-import javax.ws.rs.core.Response;
-import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
-import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
+import static jakarta.ws.rs.core.HttpHeaders.CONTENT_TYPE;
+import static jakarta.ws.rs.core.Response.Status.BAD_REQUEST;
 import static org.fcrepo.http.commons.domain.RDFMediaType.TEXT_PLAIN_WITH_CHARSET;
+import static org.junit.Assert.assertEquals;
+
+import jakarta.ws.rs.core.Response;
 
 import org.fcrepo.kernel.api.exception.FedoraInvalidNamespaceException;
-
 import org.junit.Before;
 import org.junit.Test;
 

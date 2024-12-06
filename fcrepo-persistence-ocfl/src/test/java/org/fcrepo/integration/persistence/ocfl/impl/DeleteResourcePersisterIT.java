@@ -15,6 +15,8 @@ import static org.mockito.Mockito.when;
 
 import java.util.UUID;
 
+import io.ocfl.api.MutableOcflRepository;
+import io.ocfl.api.model.ObjectVersionId;
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.TransactionManager;
@@ -23,16 +25,12 @@ import org.fcrepo.kernel.api.operations.DeleteResourceOperationFactory;
 import org.fcrepo.kernel.api.operations.RdfSourceOperationFactory;
 import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.ocfl.impl.OcflPersistentSessionManager;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import io.ocfl.api.MutableOcflRepository;
-import io.ocfl.api.model.ObjectVersionId;
 
 /**
  * Test delete resource persister for stamping versions of deleted resources in manually versioned repository.

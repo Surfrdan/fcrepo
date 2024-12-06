@@ -14,7 +14,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.fcrepo.http.commons.domain.PreferTag;
-
 import org.junit.Test;
 
 /**

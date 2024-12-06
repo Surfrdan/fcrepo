@@ -5,11 +5,11 @@
  */
 package org.fcrepo.kernel.impl.lock;
 
+import java.util.Objects;
+
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.lock.ResourceLock;
 import org.fcrepo.kernel.api.lock.ResourceLockType;
-
-import java.util.Objects;
 
 /**
  * Simple implementation of the complex lock.

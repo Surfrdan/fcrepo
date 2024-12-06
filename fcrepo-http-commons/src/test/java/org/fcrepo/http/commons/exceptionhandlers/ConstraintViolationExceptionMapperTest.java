@@ -5,18 +5,18 @@
  */
 package org.fcrepo.http.commons.exceptionhandlers;
 
-import java.net.URI;
-import javax.ws.rs.core.Link;
-import javax.ws.rs.core.UriInfo;
-
-import org.fcrepo.kernel.api.exception.ConstraintViolationException;
-
-import static org.fcrepo.http.commons.test.util.TestHelpers.getUriInfoImpl;
 import static org.fcrepo.http.commons.test.util.TestHelpers.getServletContextImpl;
+import static org.fcrepo.http.commons.test.util.TestHelpers.getUriInfoImpl;
 import static org.fcrepo.kernel.api.RdfLexicon.CONSTRAINED_BY;
 import static org.junit.Assert.assertEquals;
 
-import javax.servlet.ServletContext;
+import java.net.URI;
+
+import jakarta.servlet.ServletContext;
+import jakarta.ws.rs.core.Link;
+import jakarta.ws.rs.core.UriInfo;
+
+import org.fcrepo.kernel.api.exception.ConstraintViolationException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -5,15 +5,15 @@
  */
 package org.fcrepo.kernel.impl.operations;
 
+import java.net.URI;
+import java.util.Collection;
+
 import org.apache.jena.rdf.model.Model;
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.UpdateNonRdfSourceHeadersOperation;
 import org.fcrepo.kernel.api.operations.UpdateNonRdfSourceHeadersOperationBuilder;
-
-import java.net.URI;
-import java.util.Collection;
 
 /**
  * Builder for an operation for updating headers of non-rdf sources
@@ -22,7 +22,7 @@ import java.util.Collection;
  * @author bbpennel
  */
 public class UpdateNonRdfSourceHeadersOperationBuilderImpl extends AbstractRelaxableResourceOperationBuilder
-                                                           implements UpdateNonRdfSourceHeadersOperationBuilder {
+        implements UpdateNonRdfSourceHeadersOperationBuilder {
 
     private String mimeType;
 

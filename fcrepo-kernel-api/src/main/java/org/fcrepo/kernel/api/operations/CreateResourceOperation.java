@@ -5,9 +5,9 @@
  */
 package org.fcrepo.kernel.api.operations;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-
 import static org.fcrepo.kernel.api.operations.ResourceOperationType.CREATE;
+
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 
 /**
  * Operation for creating a resource

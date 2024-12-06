@@ -10,15 +10,15 @@ import static java.util.stream.Collectors.joining;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.Set;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.Session;
 
-import org.fcrepo.kernel.api.observer.Event;
-import org.fcrepo.kernel.api.observer.EventType;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.Session;
+
 import org.fcrepo.event.serialization.EventSerializer;
 import org.fcrepo.event.serialization.JsonLDSerializer;
-
+import org.fcrepo.kernel.api.observer.Event;
+import org.fcrepo.kernel.api.observer.EventType;
 import org.slf4j.Logger;
 
 /**

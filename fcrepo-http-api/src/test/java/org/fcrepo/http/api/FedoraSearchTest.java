@@ -5,6 +5,18 @@
  */
 package org.fcrepo.http.api;
 
+import static org.fcrepo.kernel.api.FedoraTypes.FEDORA_ID_PREFIX;
+import static org.fcrepo.search.api.Condition.Field.FEDORA_ID;
+import static org.fcrepo.search.api.Condition.Operator.EQ;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import jakarta.ws.rs.core.UriBuilder;
+
 import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
 import org.fcrepo.search.api.Condition;
 import org.fcrepo.search.api.InvalidConditionExpressionException;
@@ -12,17 +24,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import javax.ws.rs.core.UriBuilder;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import static org.fcrepo.kernel.api.FedoraTypes.FEDORA_ID_PREFIX;
-import static org.fcrepo.search.api.Condition.Field.FEDORA_ID;
-import static org.fcrepo.search.api.Condition.Operator.EQ;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 /**
  * @author dbernstein

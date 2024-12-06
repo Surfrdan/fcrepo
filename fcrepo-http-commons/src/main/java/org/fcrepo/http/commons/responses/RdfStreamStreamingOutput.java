@@ -5,20 +5,20 @@
  */
 package org.fcrepo.http.commons.responses;
 
-import static javax.ws.rs.core.Response.Status.NOT_ACCEPTABLE;
+import static jakarta.ws.rs.core.Response.Status.NOT_ACCEPTABLE;
 import static org.apache.jena.riot.Lang.JSONLD;
 import static org.apache.jena.riot.Lang.RDFXML;
-import static org.apache.jena.riot.RDFLanguages.contentTypeToLang;
-import static org.apache.jena.riot.RDFLanguages.getRegisteredLanguages;
-import static org.apache.jena.riot.RDFFormat.RDFXML_PLAIN;
 import static org.apache.jena.riot.RDFFormat.JSONLD_COMPACT_FLAT;
 import static org.apache.jena.riot.RDFFormat.JSONLD_EXPAND_FLAT;
 import static org.apache.jena.riot.RDFFormat.JSONLD_FLATTEN_FLAT;
+import static org.apache.jena.riot.RDFFormat.RDFXML_PLAIN;
+import static org.apache.jena.riot.RDFLanguages.contentTypeToLang;
+import static org.apache.jena.riot.RDFLanguages.getRegisteredLanguages;
 import static org.apache.jena.riot.system.StreamRDFWriter.defaultSerialization;
 import static org.apache.jena.riot.system.StreamRDFWriter.getWriterStream;
 import static org.fcrepo.kernel.api.RdfCollectors.toModel;
-import static org.slf4j.LoggerFactory.getLogger;
 import static org.fcrepo.kernel.api.RdfLexicon.RDF_NAMESPACE;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.io.OutputStream;
 import java.util.HashMap;
@@ -26,21 +26,22 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
 import java.util.Optional;
 import java.util.Set;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.StreamingOutput;
+import java.util.stream.Collectors;
+
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.StreamingOutput;
 
 import com.google.common.util.concurrent.AbstractFuture;
-import org.apache.jena.riot.RiotException;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NsIterator;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
+import org.apache.jena.riot.RiotException;
 import org.apache.jena.riot.system.StreamRDF;
 import org.fcrepo.kernel.api.RdfStream;
 import org.slf4j.Logger;

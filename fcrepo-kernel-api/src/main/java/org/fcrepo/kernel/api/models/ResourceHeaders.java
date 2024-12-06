@@ -5,11 +5,11 @@
  */
 package org.fcrepo.kernel.api.models;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-
 import java.net.URI;
 import java.time.Instant;
 import java.util.Collection;
+
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 
 /**
  * Header information for fedora resources.

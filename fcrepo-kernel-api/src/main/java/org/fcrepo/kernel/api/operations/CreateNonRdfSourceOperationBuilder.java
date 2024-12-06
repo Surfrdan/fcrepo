@@ -5,10 +5,10 @@
  */
 package org.fcrepo.kernel.api.operations;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-
 import java.net.URI;
 import java.util.Collection;
+
+import org.fcrepo.kernel.api.identifiers.FedoraId;
 
 /**
  * Builder for operations to create non-rdf sources

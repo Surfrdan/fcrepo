@@ -5,6 +5,13 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static java.lang.String.format;
+import static org.apache.jena.riot.system.StreamRDFWriter.getWriterStream;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
 import org.apache.jena.riot.system.StreamRDF;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -17,13 +24,6 @@ import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
 import org.fcrepo.storage.ocfl.OcflObjectSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
-import static java.lang.String.format;
-import static org.apache.jena.riot.system.StreamRDFWriter.getWriterStream;
 
 /**
  * This class implements the persistence of a new RDFSource

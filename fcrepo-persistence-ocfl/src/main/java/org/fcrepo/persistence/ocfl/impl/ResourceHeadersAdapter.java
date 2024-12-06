@@ -6,15 +6,15 @@
 
 package org.fcrepo.persistence.ocfl.impl;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import org.fcrepo.kernel.api.models.ResourceHeaders;
-import org.fcrepo.persistence.common.ResourceHeadersImpl;
-
 import java.net.URI;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
+
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.fcrepo.kernel.api.models.ResourceHeaders;
+import org.fcrepo.persistence.common.ResourceHeadersImpl;
 
 /**
  * Adapter for converting between different ResourceHeader implementations.

@@ -5,19 +5,8 @@
  */
 package org.fcrepo.http.api.responses;
 
-import org.apache.velocity.Template;
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.VelocityEngine;
-import org.apache.velocity.context.Context;
-import org.apache.velocity.tools.generic.EscapeTool;
-
-import org.fcrepo.config.FedoraPropsConfig;
-import org.fcrepo.config.SystemInfoConfig;
-import org.fcrepo.http.api.FedoraSearch;
-import org.fcrepo.http.commons.responses.ViewHelpers;
-import org.fcrepo.search.api.Condition;
-import org.fcrepo.search.api.SearchResult;
-import org.slf4j.Logger;
+import static org.fcrepo.http.commons.domain.RDFMediaType.TEXT_HTML_WITH_CHARSET;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,19 +19,29 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Properties;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.Produces;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.ext.MessageBodyWriter;
-import javax.ws.rs.ext.Provider;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.ext.MessageBodyWriter;
+import jakarta.ws.rs.ext.Provider;
 
-import static org.fcrepo.http.commons.domain.RDFMediaType.TEXT_HTML_WITH_CHARSET;
-import static org.slf4j.LoggerFactory.getLogger;
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.context.Context;
+import org.apache.velocity.tools.generic.EscapeTool;
+import org.fcrepo.config.FedoraPropsConfig;
+import org.fcrepo.config.SystemInfoConfig;
+import org.fcrepo.http.api.FedoraSearch;
+import org.fcrepo.http.commons.responses.ViewHelpers;
+import org.fcrepo.search.api.Condition;
+import org.fcrepo.search.api.SearchResult;
+import org.slf4j.Logger;
 
 /**
  * HTML writer for search results

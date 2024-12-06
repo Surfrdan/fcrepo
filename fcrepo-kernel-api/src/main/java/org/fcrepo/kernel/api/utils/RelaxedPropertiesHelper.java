@@ -18,18 +18,17 @@ import static org.fcrepo.kernel.api.RdfLexicon.restrictedType;
 import java.util.Calendar;
 
 import com.google.common.net.MediaType;
-import org.fcrepo.kernel.api.RdfLexicon;
-import org.fcrepo.kernel.api.exception.MalformedRdfException;
-import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
-import org.fcrepo.kernel.api.exception.ServerManagedPropertyException;
-import org.fcrepo.kernel.api.exception.ServerManagedTypeException;
-
 import org.apache.jena.datatypes.xsd.XSDDateTime;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
+import org.fcrepo.kernel.api.RdfLexicon;
+import org.fcrepo.kernel.api.exception.MalformedRdfException;
+import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
+import org.fcrepo.kernel.api.exception.ServerManagedPropertyException;
+import org.fcrepo.kernel.api.exception.ServerManagedTypeException;
 
 /**
  * Some server managed triples can have the prohibition on user-management overridden.  While

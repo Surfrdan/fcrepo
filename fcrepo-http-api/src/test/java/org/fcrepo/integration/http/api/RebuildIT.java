@@ -6,6 +6,36 @@
 package org.fcrepo.integration.http.api;
 
 
+import static java.text.MessageFormat.format;
+import static java.util.Arrays.asList;
+import static jakarta.ws.rs.core.Response.Status.GONE;
+import static jakarta.ws.rs.core.Response.Status.OK;
+import static org.apache.jena.graph.Node.ANY;
+import static org.apache.jena.graph.NodeFactory.createURI;
+import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
+import static org.fcrepo.kernel.api.FedoraTypes.FCR_METADATA;
+import static org.fcrepo.kernel.api.FedoraTypes.FCR_VERSIONS;
+import static org.fcrepo.kernel.api.RdfLexicon.CONTAINS;
+import static org.fcrepo.kernel.api.RdfLexicon.LDP_MEMBER;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
+import static org.springframework.test.util.AssertionErrors.assertTrue;
+
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.ZoneOffset;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.ocfl.api.OcflOption;
@@ -37,41 +67,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.TestExecutionListeners;
 
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.time.Duration;
-import java.time.ZoneOffset;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static java.text.MessageFormat.format;
-import static java.util.Arrays.asList;
-import static javax.ws.rs.core.Response.Status.GONE;
-import static javax.ws.rs.core.Response.Status.OK;
-import static org.apache.jena.graph.Node.ANY;
-import static org.apache.jena.graph.NodeFactory.createURI;
-import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
-import static org.fcrepo.kernel.api.FedoraTypes.FCR_METADATA;
-import static org.fcrepo.kernel.api.FedoraTypes.FCR_VERSIONS;
-import static org.fcrepo.kernel.api.RdfLexicon.CONTAINS;
-import static org.fcrepo.kernel.api.RdfLexicon.LDP_MEMBER;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
-import static org.springframework.test.util.AssertionErrors.assertTrue;
-
 /**
  * @author awooods
  * @since 2020-03-04
  */
-@TestExecutionListeners(listeners = { TestIsolationExecutionListener.class },
+@TestExecutionListeners(listeners = {TestIsolationExecutionListener.class},
         mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS)
 public class RebuildIT extends AbstractResourceIT {
 

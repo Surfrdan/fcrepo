@@ -5,16 +5,15 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.DELETE;
+
 import org.fcrepo.kernel.api.operations.ResourceOperation;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.fcrepo.persistence.common.ResourceHeaderUtils;
 import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
 import org.fcrepo.storage.ocfl.CommitType;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.DELETE;
 
 /**
  * Delete Resource Persister

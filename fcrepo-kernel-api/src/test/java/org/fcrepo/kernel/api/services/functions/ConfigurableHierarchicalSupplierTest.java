@@ -7,11 +7,12 @@ package org.fcrepo.kernel.api.services.functions;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.util.ReflectionTestUtils.setField;
-import org.junit.Test;
+
+import org.fcrepo.config.FedoraPropsConfig;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.fcrepo.config.FedoraPropsConfig;;
 
 /**
  * <p>

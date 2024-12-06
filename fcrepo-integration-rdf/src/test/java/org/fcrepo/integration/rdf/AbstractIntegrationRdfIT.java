@@ -5,35 +5,9 @@
  */
 package org.fcrepo.integration.rdf;
 
-import org.apache.jena.datatypes.xsd.XSDDatatype;
-import org.apache.jena.graph.Graph;
-import org.apache.jena.graph.Node;
-import org.apache.jena.graph.Triple;
-import org.apache.jena.query.Dataset;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.sparql.core.DatasetGraph;
-import org.apache.jena.sparql.graph.GraphFactory;
-import org.apache.jena.util.iterator.ExtendedIterator;
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.BasicHttpEntity;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RDFLanguages;
-import org.fcrepo.integration.http.api.AbstractResourceIT;
-
-import javax.ws.rs.core.Response;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
-
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
-import static javax.ws.rs.core.Response.Status.CREATED;
+import static jakarta.ws.rs.core.HttpHeaders.CONTENT_TYPE;
+import static jakarta.ws.rs.core.Response.Status.CREATED;
 import static org.apache.jena.graph.NodeFactory.createBlankNode;
 import static org.apache.jena.graph.NodeFactory.createLiteral;
 import static org.fcrepo.kernel.api.RdfLexicon.PREFER_MINIMAL_CONTAINER;
@@ -41,6 +15,33 @@ import static org.fcrepo.kernel.api.RdfLexicon.PREFER_SERVER_MANAGED;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
+
+import jakarta.ws.rs.core.Response;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.entity.BasicHttpEntity;
+import org.apache.jena.datatypes.xsd.XSDDatatype;
+import org.apache.jena.graph.Graph;
+import org.apache.jena.graph.Node;
+import org.apache.jena.graph.Triple;
+import org.apache.jena.query.Dataset;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFLanguages;
+import org.apache.jena.sparql.core.DatasetGraph;
+import org.apache.jena.sparql.graph.GraphFactory;
+import org.apache.jena.util.iterator.ExtendedIterator;
+import org.fcrepo.integration.http.api.AbstractResourceIT;
 
 /**
  * @author cabeer

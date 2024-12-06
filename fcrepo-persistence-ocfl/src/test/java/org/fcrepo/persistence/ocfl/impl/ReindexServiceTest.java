@@ -39,7 +39,6 @@ import org.fcrepo.search.api.Condition;
 import org.fcrepo.search.api.SearchParameters;
 import org.fcrepo.storage.ocfl.exception.ValidationException;
 import org.fcrepo.storage.ocfl.validation.ObjectValidator;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

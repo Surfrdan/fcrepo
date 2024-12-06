@@ -5,6 +5,7 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static java.lang.System.currentTimeMillis;
 import static org.apache.jena.graph.NodeFactory.createURI;
 import static org.fcrepo.kernel.api.RdfLexicon.BASIC_CONTAINER;
 import static org.fcrepo.kernel.api.RdfLexicon.NON_RDF_SOURCE;
@@ -19,8 +20,6 @@ import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 import static org.springframework.test.util.ReflectionTestUtils.setField;
 
-import static java.lang.System.currentTimeMillis;
-
 import java.io.ByteArrayInputStream;
 import java.nio.file.Paths;
 import java.util.UUID;
@@ -28,7 +27,6 @@ import java.util.UUID;
 import io.ocfl.api.MutableOcflRepository;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.ResourceFactory;
-
 import org.fcrepo.config.DigestAlgorithm;
 import org.fcrepo.config.OcflPropsConfig;
 import org.fcrepo.kernel.api.ContainmentIndex;

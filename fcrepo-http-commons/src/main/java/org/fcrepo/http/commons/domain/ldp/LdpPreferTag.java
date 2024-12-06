@@ -19,10 +19,9 @@ import static org.fcrepo.kernel.api.rdf.LdpTriplePreferences.PreferChoice.INCLUD
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.jena.rdf.model.Property;
 import org.fcrepo.http.commons.domain.PreferTag;
 import org.fcrepo.kernel.api.rdf.LdpTriplePreferences;
-
-import org.apache.jena.rdf.model.Property;
 
 /**
  * A subclass of {@link PreferTag} that contemplates the possible preferences for Linked Data Platform requests.

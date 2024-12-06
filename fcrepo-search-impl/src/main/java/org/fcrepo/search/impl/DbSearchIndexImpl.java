@@ -7,8 +7,8 @@ package org.fcrepo.search.impl;
 
 import static java.time.format.DateTimeFormatter.ISO_INSTANT;
 import static java.util.stream.Collectors.toList;
-import static org.fcrepo.common.db.DbPlatform.POSTGRESQL;
 import static org.fcrepo.common.db.DbPlatform.H2;
+import static org.fcrepo.common.db.DbPlatform.POSTGRESQL;
 import static org.fcrepo.search.api.Condition.Field.CONTENT_SIZE;
 import static org.fcrepo.search.api.Condition.Field.FEDORA_ID;
 import static org.fcrepo.search.api.Condition.Field.MIME_TYPE;
@@ -31,8 +31,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 import javax.sql.DataSource;
 
 import com.google.common.collect.Sets;

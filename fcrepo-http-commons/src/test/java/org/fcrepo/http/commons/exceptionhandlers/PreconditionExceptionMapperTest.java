@@ -6,13 +6,12 @@
 
 package org.fcrepo.http.commons.exceptionhandlers;
 
-import static javax.ws.rs.core.Response.Status.PRECONDITION_FAILED;
+import static jakarta.ws.rs.core.Response.Status.PRECONDITION_FAILED;
 import static org.junit.Assert.assertEquals;
 
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response;
 
 import org.fcrepo.kernel.api.exception.PreconditionException;
-
 import org.junit.Before;
 import org.junit.Test;
 

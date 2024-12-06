@@ -6,8 +6,8 @@
 
 package org.fcrepo.kernel.api.exception;
 
-import static org.apache.http.HttpStatus.SC_PRECONDITION_FAILED;
 import static org.apache.http.HttpStatus.SC_NOT_MODIFIED;
+import static org.apache.http.HttpStatus.SC_PRECONDITION_FAILED;
 
 /**
  * @author dbernstein

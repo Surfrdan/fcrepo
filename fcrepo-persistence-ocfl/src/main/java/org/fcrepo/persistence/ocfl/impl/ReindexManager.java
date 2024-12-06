@@ -20,7 +20,6 @@ import org.fcrepo.common.db.DbTransactionExecutor;
 import org.fcrepo.config.OcflPropsConfig;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.TransactionManager;
-
 import org.slf4j.Logger;
 
 /**

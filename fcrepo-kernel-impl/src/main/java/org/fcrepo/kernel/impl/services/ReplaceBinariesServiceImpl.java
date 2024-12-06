@@ -5,6 +5,16 @@
  */
 package org.fcrepo.kernel.impl.services;
 
+import static java.lang.String.format;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Collection;
+import java.util.Collections;
+
+import jakarta.inject.Inject;
+
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -18,16 +28,6 @@ import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
 import org.fcrepo.persistence.common.MultiDigestInputStreamWrapper;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
-
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Collection;
-import java.util.Collections;
-
-import static java.lang.String.format;
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * Implementation of a service for replacing/updating binary resources

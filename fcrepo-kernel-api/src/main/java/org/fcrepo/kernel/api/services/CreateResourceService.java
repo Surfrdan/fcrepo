@@ -5,15 +5,15 @@
  */
 package org.fcrepo.kernel.api.services;
 
-import org.apache.jena.rdf.model.Model;
-import org.fcrepo.kernel.api.Transaction;
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import org.fcrepo.kernel.api.models.ExternalContent;
-
 import java.io.InputStream;
 import java.net.URI;
 import java.util.Collection;
 import java.util.List;
+
+import org.apache.jena.rdf.model.Model;
+import org.fcrepo.kernel.api.Transaction;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.fcrepo.kernel.api.models.ExternalContent;
 
 /**
  * Interface for a service to create a new resource via a POST request.

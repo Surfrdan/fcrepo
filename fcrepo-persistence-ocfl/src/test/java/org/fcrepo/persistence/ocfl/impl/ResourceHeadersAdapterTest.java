@@ -6,17 +6,17 @@
 
 package org.fcrepo.persistence.ocfl.impl;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import org.fcrepo.persistence.common.ResourceHeadersImpl;
-import org.fcrepo.storage.ocfl.ResourceHeaders;
-import org.junit.Test;
+import static org.fcrepo.kernel.api.RdfLexicon.BASIC_CONTAINER;
+import static org.junit.Assert.assertEquals;
 
 import java.net.URI;
 import java.time.Instant;
 import java.util.List;
 
-import static org.fcrepo.kernel.api.RdfLexicon.BASIC_CONTAINER;
-import static org.junit.Assert.assertEquals;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.fcrepo.persistence.common.ResourceHeadersImpl;
+import org.fcrepo.storage.ocfl.ResourceHeaders;
+import org.junit.Test;
 
 /**
  * @author pwinckles

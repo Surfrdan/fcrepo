@@ -6,8 +6,8 @@
 
 package org.fcrepo.integration.http.api;
 
-import static javax.ws.rs.core.HttpHeaders.LINK;
-import static javax.ws.rs.core.Response.Status.CREATED;
+import static jakarta.ws.rs.core.HttpHeaders.LINK;
+import static jakarta.ws.rs.core.Response.Status.CREATED;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
@@ -20,6 +20,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.Phaser;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.google.common.base.Stopwatch;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -28,13 +29,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.TestExecutionListeners;
 
-import com.google.common.base.Stopwatch;
-
 /**
  * @author pwinckles
  */
 @TestExecutionListeners(
-        listeners = { TestIsolationExecutionListener.class },
+        listeners = {TestIsolationExecutionListener.class},
         mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS)
 public class ConcurrencyIT extends AbstractResourceIT {
 

@@ -5,12 +5,12 @@
  */
 package org.fcrepo.kernel.api;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import org.fcrepo.kernel.api.exception.ConcurrentUpdateException;
 import org.fcrepo.kernel.api.exception.TransactionRuntimeException;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
-
-import java.time.Duration;
-import java.time.Instant;
 
 /**
  * The Fedora Transaction abstraction

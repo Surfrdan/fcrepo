@@ -5,21 +5,21 @@
  */
 package org.fcrepo.kernel.impl.operations;
 
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Collection;
+
 import org.apache.commons.lang3.NotImplementedException;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.UpdateNonRdfSourceHeadersOperation;
-
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Collection;
 
 /**
  * Operation to update the headers of a non-rdf resource
  * @author bbpennel
  */
 public class UpdateNonRdfSourceHeadersOperationImpl extends AbstractRelaxableResourceOperation
-                                                    implements UpdateNonRdfSourceHeadersOperation {
+        implements UpdateNonRdfSourceHeadersOperation {
 
     private String mimeType;
 

@@ -5,25 +5,25 @@
  */
 package org.fcrepo.kernel.impl.operations;
 
+import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getCreatedBy;
+import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getCreatedDate;
+import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getModifiedBy;
+import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getModifiedDate;
+
+import java.time.Instant;
+
 import org.apache.jena.rdf.model.Model;
 import org.fcrepo.config.ServerManagedPropsMode;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.operations.RelaxableResourceOperationBuilder;
 
-import java.time.Instant;
-
-import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getCreatedBy;
-import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getCreatedDate;
-import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getModifiedBy;
-import static org.fcrepo.kernel.api.utils.RelaxedPropertiesHelper.getModifiedDate;
-
 /**
  * Abstract builder for constructing relaxable resource operations
  * @author bbpennel
  */
 public abstract class AbstractRelaxableResourceOperationBuilder extends AbstractResourceOperationBuilder
-                                                                implements RelaxableResourceOperationBuilder {
+        implements RelaxableResourceOperationBuilder {
     protected String lastModifiedBy;
 
     protected String createdBy;

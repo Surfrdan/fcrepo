@@ -5,6 +5,8 @@
  */
 package org.fcrepo.kernel.impl.models;
 
+import static java.net.URI.create;
+import static java.util.stream.Collectors.toList;
 import static org.apache.jena.graph.NodeFactory.createURI;
 import static org.apache.jena.vocabulary.RDF.type;
 import static org.fcrepo.kernel.api.RdfLexicon.ARCHIVAL_GROUP;
@@ -14,9 +16,6 @@ import static org.fcrepo.kernel.api.RdfLexicon.REPOSITORY_ROOT;
 import static org.fcrepo.kernel.api.RdfLexicon.RESOURCE;
 import static org.fcrepo.kernel.api.RdfLexicon.VERSIONED_RESOURCE;
 import static org.fcrepo.kernel.api.RdfLexicon.VERSIONING_TIMEGATE_TYPE;
-
-import static java.net.URI.create;
-import static java.util.stream.Collectors.toList;
 
 import java.net.URI;
 import java.nio.file.Path;
@@ -28,6 +27,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+import org.apache.jena.graph.Triple;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.cache.UserTypesCache;
@@ -44,8 +44,6 @@ import org.fcrepo.persistence.api.PersistentStorageSession;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentItemNotFoundException;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
-
-import org.apache.jena.graph.Triple;
 
 /**
  * Implementation of a Fedora resource, containing functionality common to the more concrete resource implementations.

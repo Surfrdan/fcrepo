@@ -12,10 +12,9 @@ import static org.slf4j.LoggerFactory.getLogger;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.ws.rs.core.UriBuilder;
+import jakarta.ws.rs.core.UriBuilder;
 
 import org.fcrepo.kernel.api.identifiers.FedoraId;
-
 import org.glassfish.jersey.uri.UriTemplate;
 import org.slf4j.Logger;
 import org.springframework.util.StringUtils;

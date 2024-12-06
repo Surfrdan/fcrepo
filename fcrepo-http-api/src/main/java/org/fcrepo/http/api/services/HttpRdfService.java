@@ -19,24 +19,11 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.ws.rs.BadRequestException;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.BadRequestException;
+import jakarta.ws.rs.core.MediaType;
 
-import org.fcrepo.config.FedoraPropsConfig;
-import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
-import org.fcrepo.kernel.api.RdfStream;
-import org.fcrepo.kernel.api.exception.ConstraintViolationException;
-import org.fcrepo.kernel.api.exception.MalformedRdfException;
-import org.fcrepo.kernel.api.exception.MultipleConstraintViolationException;
-import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
-import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
-import org.fcrepo.kernel.api.exception.ServerManagedPropertyException;
-import org.fcrepo.kernel.api.exception.ServerManagedTypeException;
-import org.fcrepo.kernel.api.exception.UnsupportedMediaTypeException;
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
-
+import com.fasterxml.jackson.core.JsonParseException;
 import org.apache.jena.atlas.RuntimeIOException;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
@@ -51,10 +38,21 @@ import org.apache.jena.riot.RiotException;
 import org.apache.jena.update.Update;
 import org.apache.jena.update.UpdateFactory;
 import org.apache.jena.update.UpdateRequest;
+import org.fcrepo.config.FedoraPropsConfig;
+import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
+import org.fcrepo.kernel.api.RdfStream;
+import org.fcrepo.kernel.api.exception.ConstraintViolationException;
+import org.fcrepo.kernel.api.exception.MalformedRdfException;
+import org.fcrepo.kernel.api.exception.MultipleConstraintViolationException;
+import org.fcrepo.kernel.api.exception.RelaxableServerManagedPropertyException;
+import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
+import org.fcrepo.kernel.api.exception.ServerManagedPropertyException;
+import org.fcrepo.kernel.api.exception.ServerManagedTypeException;
+import org.fcrepo.kernel.api.exception.UnsupportedMediaTypeException;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
-
-import com.fasterxml.jackson.core.JsonParseException;
 
 /**
  * A service that will translate the resourceURI to Fedora ID in the Rdf InputStream

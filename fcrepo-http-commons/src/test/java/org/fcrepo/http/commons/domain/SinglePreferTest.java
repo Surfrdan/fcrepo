@@ -5,16 +5,16 @@
  */
 package org.fcrepo.http.commons.domain;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 /**
  * @author cabeer
  * @author ajs6f
  */
-public class SinglePreferTest  {
+public class SinglePreferTest {
 
     protected SinglePrefer createTestPreferTypeFromHeader(final String header) {
         return new SinglePrefer(header);

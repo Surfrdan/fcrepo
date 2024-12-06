@@ -5,15 +5,15 @@
  */
 package org.fcrepo.http.commons;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.util.logging.Logger;
+
 import org.fcrepo.http.commons.metrics.MicrometerFeature;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
-
-import java.util.logging.Logger;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * @author cabeer

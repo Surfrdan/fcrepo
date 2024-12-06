@@ -5,20 +5,11 @@
  */
 package org.fcrepo.http.api;
 
-import static javax.ws.rs.core.MediaType.APPLICATION_OCTET_STREAM_TYPE;
+import static jakarta.ws.rs.core.MediaType.APPLICATION_OCTET_STREAM_TYPE;
 import static org.apache.http.HttpHeaders.CONTENT_LENGTH;
 import static org.apache.http.HttpHeaders.CONTENT_TYPE;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.slf4j.LoggerFactory.getLogger;
-
-import org.apache.http.Header;
-import org.apache.http.client.methods.HttpHead;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.fcrepo.kernel.api.exception.ExternalContentAccessException;
-import org.fcrepo.kernel.api.exception.ExternalMessageBodyException;
-import javax.ws.rs.core.Link;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -30,6 +21,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
+import jakarta.ws.rs.core.Link;
+
+import org.apache.http.Header;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpHead;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.fcrepo.kernel.api.exception.ExternalContentAccessException;
+import org.fcrepo.kernel.api.exception.ExternalMessageBodyException;
 import org.fcrepo.kernel.api.models.ExternalContent;
 import org.slf4j.Logger;
 

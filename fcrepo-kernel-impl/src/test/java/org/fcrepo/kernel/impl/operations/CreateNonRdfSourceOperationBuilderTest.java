@@ -7,8 +7,14 @@ package org.fcrepo.kernel.impl.operations;
 
 import static org.junit.Assert.assertEquals;
 
-import org.apache.commons.io.IOUtils;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import org.apache.commons.io.IOUtils;
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.models.ExternalContent;
@@ -19,13 +25,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author bseeger

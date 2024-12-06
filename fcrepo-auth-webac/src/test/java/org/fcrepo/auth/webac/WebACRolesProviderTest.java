@@ -5,6 +5,7 @@
  */
 package org.fcrepo.auth.webac;
 
+import static java.util.Collections.singletonList;
 import static org.apache.jena.graph.NodeFactory.createURI;
 import static org.apache.jena.rdf.model.ModelFactory.createDefaultModel;
 import static org.apache.jena.riot.Lang.TTL;
@@ -20,8 +21,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.util.ReflectionTestUtils.setField;
-
-import static java.util.Collections.singletonList;
 
 import java.net.URI;
 import java.nio.file.Paths;

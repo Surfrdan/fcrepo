@@ -5,16 +5,16 @@
  */
 package org.fcrepo.kernel.impl.models;
 
+import java.net.URI;
+import java.util.Collections;
+import java.util.List;
+
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
 import org.fcrepo.kernel.api.models.FedoraResource;
 import org.fcrepo.kernel.api.models.ResourceFactory;
 import org.fcrepo.kernel.api.models.Tombstone;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
-
-import java.net.URI;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Tombstone class

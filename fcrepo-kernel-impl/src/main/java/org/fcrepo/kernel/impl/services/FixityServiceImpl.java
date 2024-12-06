@@ -15,20 +15,6 @@ import static org.fcrepo.kernel.api.RdfLexicon.HAS_SIZE;
 import static org.fcrepo.kernel.api.RdfLexicon.PREMIS_EVENT_OUTCOME_DETAIL;
 import static org.fcrepo.kernel.api.RdfLexicon.PREMIS_FIXITY;
 
-import org.apache.jena.rdf.model.Literal;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Resource;
-import org.fcrepo.kernel.api.RdfStream;
-import org.fcrepo.kernel.api.exception.InvalidChecksumException;
-import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
-import org.fcrepo.kernel.api.exception.UnsupportedAlgorithmException;
-import org.fcrepo.kernel.api.models.Binary;
-import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
-import org.fcrepo.kernel.api.services.FixityService;
-import org.fcrepo.config.DigestAlgorithm;
-import org.fcrepo.persistence.common.MultiDigestInputStreamWrapper;
-import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -36,6 +22,20 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import org.apache.jena.rdf.model.Literal;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Resource;
+import org.fcrepo.config.DigestAlgorithm;
+import org.fcrepo.kernel.api.RdfStream;
+import org.fcrepo.kernel.api.exception.InvalidChecksumException;
+import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
+import org.fcrepo.kernel.api.exception.UnsupportedAlgorithmException;
+import org.fcrepo.kernel.api.models.Binary;
+import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
+import org.fcrepo.kernel.api.services.FixityService;
+import org.fcrepo.persistence.common.MultiDigestInputStreamWrapper;
+import org.springframework.stereotype.Component;
 
 /**
  * Implementation of {@link org.fcrepo.kernel.api.services.FixityService}

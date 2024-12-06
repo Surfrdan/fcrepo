@@ -5,6 +5,15 @@
  */
 package org.fcrepo.http.api;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.security.Principal;
+
+import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.SecurityContext;
+
 import org.fcrepo.common.db.DbTransactionExecutor;
 import org.fcrepo.http.commons.AbstractResource;
 import org.fcrepo.http.commons.api.rdf.HttpIdentifierConverter;
@@ -17,14 +26,6 @@ import org.fcrepo.kernel.api.models.FedoraResource;
 import org.fcrepo.kernel.api.models.ResourceFactory;
 import org.fcrepo.kernel.api.models.ResourceHelper;
 import org.slf4j.Logger;
-
-import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.SecurityContext;
-import java.security.Principal;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * @author cabeer

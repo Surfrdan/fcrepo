@@ -5,13 +5,25 @@
  */
 package org.fcrepo.kernel.impl.services;
 
+import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
+import static org.fcrepo.kernel.api.RdfCollectors.toModel;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+import jakarta.annotation.Nonnull;
+import jakarta.inject.Inject;
+
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
-
 import org.fcrepo.config.OcflPropsConfig;
 import org.fcrepo.kernel.api.RdfLexicon;
 import org.fcrepo.kernel.api.RdfStream;
@@ -28,18 +40,6 @@ import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 import org.fcrepo.kernel.api.services.MembershipService;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-
-import static org.fcrepo.kernel.api.RdfCollectors.toModel;
-import static org.slf4j.LoggerFactory.getLogger;
-import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
 
 /**
  * Implementation of a service which updates and persists membership properties for resources

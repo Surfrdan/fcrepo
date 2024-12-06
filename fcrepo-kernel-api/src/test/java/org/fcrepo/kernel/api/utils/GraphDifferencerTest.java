@@ -5,21 +5,21 @@
  */
 package org.fcrepo.kernel.api.utils;
 
+import static java.util.stream.Stream.of;
+import static org.apache.jena.graph.NodeFactory.createLiteral;
+import static org.apache.jena.graph.NodeFactory.createURI;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.stream.Stream;
 
-import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.graph.Graph;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.sparql.graph.GraphFactory;
+import org.fcrepo.kernel.api.rdf.DefaultRdfStream;
 import org.junit.Test;
-
-import static java.util.stream.Stream.of;
-import static org.apache.jena.graph.NodeFactory.createLiteral;
-import static org.apache.jena.graph.NodeFactory.createURI;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
 
 /**
  * <p>DifferencingIteratorTest class.</p>

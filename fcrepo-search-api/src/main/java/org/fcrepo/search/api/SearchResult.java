@@ -5,12 +5,12 @@
  */
 package org.fcrepo.search.api;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
 import java.util.Map;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * This class holds the search result data for a single page.

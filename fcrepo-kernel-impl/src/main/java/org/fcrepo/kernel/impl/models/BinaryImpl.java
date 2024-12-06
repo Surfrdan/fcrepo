@@ -5,6 +5,16 @@
  */
 package org.fcrepo.kernel.impl.models;
 
+import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_BINARY;
+import static org.fcrepo.kernel.api.models.ExternalContent.PROXY;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Collection;
+import java.util.List;
+
 import org.apache.commons.io.input.BoundedInputStream;
 import org.fcrepo.kernel.api.RdfStream;
 import org.fcrepo.kernel.api.Transaction;
@@ -21,16 +31,6 @@ import org.fcrepo.kernel.api.models.ResourceFactory;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
 import org.fcrepo.persistence.api.exceptions.PersistentItemNotFoundException;
 import org.fcrepo.persistence.api.exceptions.PersistentStorageException;
-
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Collection;
-import java.util.List;
-
-import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_BINARY;
-import static org.fcrepo.kernel.api.models.ExternalContent.PROXY;
 
 
 /**

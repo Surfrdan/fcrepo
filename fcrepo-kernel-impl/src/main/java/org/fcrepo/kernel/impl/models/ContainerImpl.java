@@ -5,6 +5,14 @@
  */
 package org.fcrepo.kernel.impl.models;
 
+import static org.fcrepo.kernel.api.RdfLexicon.CONTAINER;
+import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_CONTAINER;
+import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
+
+import java.net.URI;
+import java.util.List;
+import java.util.stream.Stream;
+
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.cache.UserTypesCache;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -12,14 +20,6 @@ import org.fcrepo.kernel.api.models.Container;
 import org.fcrepo.kernel.api.models.FedoraResource;
 import org.fcrepo.kernel.api.models.ResourceFactory;
 import org.fcrepo.persistence.api.PersistentStorageSessionManager;
-
-import java.net.URI;
-import java.util.List;
-import java.util.stream.Stream;
-
-import static org.fcrepo.kernel.api.RdfLexicon.CONTAINER;
-import static org.fcrepo.kernel.api.RdfLexicon.FEDORA_CONTAINER;
-import static org.fcrepo.kernel.api.RdfLexicon.RDF_SOURCE;
 
 
 /**

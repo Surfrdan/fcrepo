@@ -8,7 +8,6 @@ package org.fcrepo.kernel.api.models;
 import java.net.URI;
 import java.nio.file.Path;
 import java.time.Instant;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;

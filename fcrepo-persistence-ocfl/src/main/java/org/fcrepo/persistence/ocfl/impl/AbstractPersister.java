@@ -5,6 +5,13 @@
  */
 package org.fcrepo.persistence.ocfl.impl;
 
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.CREATE;
+import static org.fcrepo.kernel.api.operations.ResourceOperationType.OVERWRITE_TOMBSTONE;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Optional;
+
 import org.fcrepo.kernel.api.Transaction;
 import org.fcrepo.kernel.api.exception.RepositoryRuntimeException;
 import org.fcrepo.kernel.api.identifiers.FedoraId;
@@ -19,13 +26,6 @@ import org.fcrepo.persistence.ocfl.api.FedoraOcflMappingNotFoundException;
 import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
 import org.fcrepo.persistence.ocfl.api.Persister;
 import org.fcrepo.storage.ocfl.OcflObjectSession;
-
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Optional;
-
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.CREATE;
-import static org.fcrepo.kernel.api.operations.ResourceOperationType.OVERWRITE_TOMBSTONE;
 
 /**
  * A base abstract persister class

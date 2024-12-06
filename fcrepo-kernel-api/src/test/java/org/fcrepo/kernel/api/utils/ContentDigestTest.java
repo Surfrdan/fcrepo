@@ -12,7 +12,6 @@ import static org.fcrepo.kernel.api.utils.ContentDigest.getAlgorithm;
 import static org.junit.Assert.assertEquals;
 
 import org.fcrepo.config.DigestAlgorithm;
-
 import org.junit.Test;
 
 /**

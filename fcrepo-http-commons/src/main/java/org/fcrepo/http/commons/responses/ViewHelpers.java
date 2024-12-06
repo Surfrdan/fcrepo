@@ -6,6 +6,11 @@
 package org.fcrepo.http.commons.responses;
 
 import static com.google.common.collect.Lists.newArrayList;
+import static java.util.Arrays.asList;
+import static java.util.Arrays.stream;
+import static java.util.Collections.emptyMap;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toMap;
 import static org.apache.jena.atlas.iterator.Iter.asStream;
 import static org.apache.jena.graph.GraphUtil.listObjects;
 import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
@@ -14,11 +19,6 @@ import static org.apache.jena.vocabulary.DC.title;
 import static org.apache.jena.vocabulary.RDF.type;
 import static org.apache.jena.vocabulary.RDFS.label;
 import static org.apache.jena.vocabulary.SKOS.prefLabel;
-import static java.util.Arrays.asList;
-import static java.util.Arrays.stream;
-import static java.util.Collections.emptyMap;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toMap;
 import static org.fcrepo.kernel.api.FedoraTypes.FCR_METADATA;
 import static org.fcrepo.kernel.api.FedoraTypes.FCR_VERSIONS;
 import static org.fcrepo.kernel.api.RdfLexicon.CONTAINS;
@@ -38,25 +38,23 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.StringJoiner;
 
-import javax.ws.rs.core.UriInfo;
+import jakarta.ws.rs.core.UriInfo;
 
 import org.apache.jena.graph.Graph;
+import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.graph.impl.LiteralLabel;
-import org.apache.jena.vocabulary.DCTerms;
-
-import org.fcrepo.http.commons.api.rdf.TripleOrdering;
-import org.slf4j.Logger;
-
-import org.apache.jena.graph.Node;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.shared.PrefixMapping;
+import org.apache.jena.vocabulary.DCTerms;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
+import org.fcrepo.http.commons.api.rdf.TripleOrdering;
+import org.slf4j.Logger;
 
 /**
  * General view helpers for rendering HTML responses

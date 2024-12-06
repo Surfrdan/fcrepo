@@ -5,8 +5,17 @@
  */
 package org.fcrepo.integration.http.api;
 
+import static jakarta.ws.rs.core.HttpHeaders.CONTENT_TYPE;
+import static jakarta.ws.rs.core.HttpHeaders.LINK;
+import static jakarta.ws.rs.core.Response.Status.BAD_REQUEST;
+import static jakarta.ws.rs.core.Response.Status.CONFLICT;
+import static jakarta.ws.rs.core.Response.Status.CREATED;
+import static jakarta.ws.rs.core.Response.Status.GONE;
+import static jakarta.ws.rs.core.Response.Status.METHOD_NOT_ALLOWED;
+import static jakarta.ws.rs.core.Response.Status.NOT_FOUND;
+import static jakarta.ws.rs.core.Response.Status.NO_CONTENT;
+import static jakarta.ws.rs.core.Response.Status.OK;
 import static org.apache.jena.rdf.model.ResourceFactory.createResource;
-import static javax.ws.rs.core.Response.Status.CONFLICT;
 import static org.fcrepo.http.api.ContentExposingResource.HTTP_HEADER_OVERWRITE_TOMBSTONE;
 import static org.fcrepo.kernel.api.FedoraTypes.FCR_TOMBSTONE;
 import static org.fcrepo.kernel.api.FedoraTypes.FCR_VERSIONS;
@@ -15,18 +24,6 @@ import static org.fcrepo.kernel.api.services.VersionService.MEMENTO_LABEL_FORMAT
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
-import static javax.ws.rs.core.HttpHeaders.LINK;
-import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
-import static javax.ws.rs.core.Response.Status.CREATED;
-import static javax.ws.rs.core.Response.Status.GONE;
-import static javax.ws.rs.core.Response.Status.METHOD_NOT_ALLOWED;
-import static javax.ws.rs.core.Response.Status.NOT_FOUND;
-import static javax.ws.rs.core.Response.Status.NO_CONTENT;
-import static javax.ws.rs.core.Response.Status.OK;
-
-import javax.ws.rs.core.Link;
-
 import java.io.IOException;
 import java.net.URI;
 import java.time.Instant;
@@ -34,14 +31,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
+import jakarta.ws.rs.core.Link;
+
 import org.apache.commons.codec.Charsets;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpOptions;
+import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -58,7 +57,7 @@ import org.springframework.test.context.TestExecutionListeners;
  * @author whikloj
  */
 @TestExecutionListeners(
-        listeners = { TestIsolationExecutionListener.class },
+        listeners = {TestIsolationExecutionListener.class},
         mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS)
 public class FedoraTombstonesIT extends AbstractResourceIT {
 

@@ -5,13 +5,13 @@
  */
 package org.fcrepo.integration.jms.observer;
 
+import jakarta.jms.Destination;
+import jakarta.jms.JMSException;
+
 import org.junit.runner.RunWith;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import javax.jms.Destination;
-import javax.jms.JMSException;
 
 /**
  * <p>
@@ -21,8 +21,8 @@ import javax.jms.JMSException;
  * @author acoburn
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "/spring-test/jms-queue.xml", "/spring-test/fcrepo-config.xml",
-    "/spring-test/eventing.xml" })
+@ContextConfiguration({"/spring-test/jms-queue.xml", "/spring-test/fcrepo-config.xml",
+        "/spring-test/eventing.xml"})
 @DirtiesContext
 public class JmsQueueIT extends AbstractJmsIT {
 

@@ -6,11 +6,12 @@
 
 package org.fcrepo.common.db;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.sql.SQLException;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Detects the database platform from a datasource.

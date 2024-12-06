@@ -26,7 +26,6 @@ import org.fcrepo.persistence.ocfl.api.FedoraToOcflObjectIndex;
 import org.fcrepo.storage.ocfl.CommitType;
 import org.fcrepo.storage.ocfl.OcflObjectSession;
 import org.fcrepo.storage.ocfl.ResourceHeaders;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

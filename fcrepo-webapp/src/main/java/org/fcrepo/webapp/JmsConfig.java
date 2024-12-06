@@ -6,8 +6,10 @@
 
 package org.fcrepo.webapp;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
+import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.xbean.BrokerFactoryBean;
 import org.fcrepo.config.ConditionOnPropertyTrue;
 import org.fcrepo.config.FedoraPropsConfig;
 import org.fcrepo.config.JmsDestination;
@@ -16,9 +18,6 @@ import org.fcrepo.jms.DefaultMessageFactory;
 import org.fcrepo.jms.JMSEventMessageFactory;
 import org.fcrepo.jms.JMSQueuePublisher;
 import org.fcrepo.jms.JMSTopicPublisher;
-
-import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.xbean.BrokerFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;

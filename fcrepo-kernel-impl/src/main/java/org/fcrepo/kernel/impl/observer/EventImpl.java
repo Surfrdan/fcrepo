@@ -6,16 +6,16 @@
 
 package org.fcrepo.kernel.impl.observer;
 
-import org.fcrepo.kernel.api.identifiers.FedoraId;
-import org.fcrepo.kernel.api.observer.Event;
-import org.fcrepo.kernel.api.observer.EventType;
+import static com.google.common.base.Preconditions.checkNotNull;
+import static java.util.UUID.randomUUID;
 
 import java.net.URI;
 import java.time.Instant;
 import java.util.Set;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static java.util.UUID.randomUUID;
+import org.fcrepo.kernel.api.identifiers.FedoraId;
+import org.fcrepo.kernel.api.observer.Event;
+import org.fcrepo.kernel.api.observer.EventType;
 
 /**
  * An event that describes one or more actions that a user preformed on a resource.

@@ -5,16 +5,15 @@
  */
 package org.fcrepo.http.commons.exceptionhandlers;
 
-import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
+import static jakarta.ws.rs.core.Response.Status.BAD_REQUEST;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import javax.ws.rs.core.Response;
-
-import org.junit.Before;
-import org.junit.Test;
+import jakarta.ws.rs.core.Response;
 
 import org.apache.jena.query.QueryParseException;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * @author whikloj
