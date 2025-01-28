@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.fcrepo</groupId>
     <artifactId>fcrepo</artifactId>
-    <version>6.6.0-SNAPSHOT</version>
+    <version>7.0.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>fcrepo-persistence-api</artifactId>
@@ -15,28 +15,29 @@
     <osgi.import.packages>
       org.apache.jena.*,
 
-      *   
+      *
     </osgi.import.packages>
     <osgi.export.packages>
       org.fcrepo.persistence.api.*;version=${project.version}
     </osgi.export.packages>
   </properties>
-  
+
   <dependencies>
     <dependency>
       <groupId>org.fcrepo</groupId>
       <artifactId>fcrepo-kernel-api</artifactId>
       <version>${project.version}</version>
     </dependency>
-    
-    <!-- test gear -->  
+
+    <!-- test gear -->
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>

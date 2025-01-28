@@ -3,7 +3,7 @@
     <parent>
         <artifactId>fcrepo</artifactId>
         <groupId>org.fcrepo</groupId>
-        <version>6.6.0-SNAPSHOT</version>
+        <version>7.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,8 +15,9 @@
     <dependencies>
         <!-- test gear -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+          <scope>test</scope>
         </dependency>
 
         <dependency>
