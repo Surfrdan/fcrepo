@@ -19,11 +19,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-        java: ['11']
+        java: ['21']
         experimental: [false]
-        # JDK 17  build testing. Allowed to fail as marked experimental
+        # JDK 23  build testing. Allowed to fail as marked experimental
         include:
-          - java: 17
+          - java: 23
             os: ubuntu-latest
             experimental: true
     steps:
@@ -44,7 +44,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        java: ['11']
+        java: ['21']
     services:
       postgres:
         image: postgres:12
