@@ -12,7 +12,10 @@ import org.apache.jena.graph.Triple;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.shex.expressions.TripleExpression;
 import org.apache.jena.sparql.core.DatasetGraph;
+import org.apache.jena.sparql.function.library.triple.TripleObject;
+import org.apache.jena.sparql.function.library.triple.TripleSubject;
 import org.apache.jena.sparql.graph.GraphFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.apache.commons.io.IOUtils;
@@ -131,7 +134,7 @@ public abstract class AbstractIntegrationRdfIT extends AbstractResourceIT {
                     bnodeMap.put(replacement.getSubject(), createBlankNode());
                 }
 
-                replacement = new Triple(bnodeMap.get(replacement.getSubject()),
+                replacement = Triple.create(bnodeMap.get(replacement.getSubject()),
                         replacement.getPredicate(),
                         replacement.getObject());
             }
@@ -142,7 +145,7 @@ public abstract class AbstractIntegrationRdfIT extends AbstractResourceIT {
                     bnodeMap.put(replacement.getObject(), createBlankNode());
                 }
 
-                replacement = new Triple(replacement.getSubject(),
+                replacement = Triple.create(replacement.getSubject(),
                         replacement.getPredicate(),
                         bnodeMap.get(replacement.getObject()));
             }
@@ -150,7 +153,7 @@ public abstract class AbstractIntegrationRdfIT extends AbstractResourceIT {
             if (replacement.getObject().isLiteral()
                     && replacement.getObject().getLiteral().getDatatype() != null
                     && replacement.getObject().getLiteral().getDatatype().equals(XSDDatatype.XSDstring)) {
-                replacement = new Triple(replacement.getSubject(),
+                replacement = Triple.create(replacement.getSubject(),
                         replacement.getPredicate(),
                         createLiteral(replacement.getObject().getLiteral().getLexicalForm()));
             }
