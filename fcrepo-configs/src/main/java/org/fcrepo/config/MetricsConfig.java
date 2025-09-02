@@ -22,20 +22,24 @@ import io.micrometer.prometheusmetrics.PrometheusConfig;
 import io.micrometer.prometheusmetrics.PrometheusMeterRegistry;
 import io.prometheus.metrics.model.registry.PrometheusRegistry;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Role;
 
 
 /**
  * @author pwinckles
  */
 @Configuration
+@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
 public class MetricsConfig extends BasePropsConfig {
 
     @Value("${fcrepo.metrics.enable:false}")
     private boolean metricsEnabled;
 
     @Bean
+    @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
     public MeterRegistry meterRegistry() {
         final MeterRegistry registry;
         if (metricsEnabled) {

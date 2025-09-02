@@ -31,9 +31,11 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.mgt.WebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Role;
 import org.springframework.core.annotation.Order;
 
 /**
@@ -43,6 +45,7 @@ import org.springframework.core.annotation.Order;
  */
 @Configuration
 @Conditional(AuthConfig.AuthorizationEnabled.class)
+@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
 public class AuthConfig {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthConfig.class);
@@ -153,7 +156,8 @@ public class AuthConfig {
      * @return post processor
      */
     @Bean
-    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
+    @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
+    public static LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
         return new LifecycleBeanPostProcessor();
     }
 
