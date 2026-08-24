@@ -115,12 +115,15 @@ passed.
 
 ## Code style & conventions
 
-- **Checkstyle is enforced.** Config lives in `fcrepo-checkstyle/checkstyle.xml`
-  (with `checkstyle-suppressions.xml`). Match the existing style; run
-  `mvn checkstyle:check` before proposing a change is done.
-- **License headers are enforced.** Every new source file must carry the Apache
-  2.0 header from `fcrepo-license/LICENSE_HEADER.txt`. `mvn license:check` will
-  fail otherwise; `mvn license:format` can apply it.
+- **Follow the checkstyle rules.** The config (`fcrepo-checkstyle/checkstyle.xml`
+  and `checkstyle-suppressions.xml`) comes from `org.fcrepo:fcrepo-build-tools`
+  and is authoritative — match whatever it enforces, and run `mvn checkstyle:check`
+  before proposing a change is done. Do **not** add `@author` tags; the project
+  does not use author attribution.
+- **Apply license headers with Maven, not by hand.** Run `mvn license:format` to
+  add the Apache 2.0 header to new source files (`mvn license:check` fails without
+  it). Use the header exactly as the plugin generates it — do not hand-write or
+  edit it.
 - **Match surrounding code.** Follow the naming, structure, and idioms already
   present in the module you are editing rather than introducing new patterns.
 - **Tests.** Add or update tests for behavior changes; the project cares about
