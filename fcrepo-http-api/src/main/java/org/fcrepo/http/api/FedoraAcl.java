@@ -214,7 +214,12 @@ public class FedoraAcl extends ContentExposingResource {
                 patchResourcewithSparql(aclResource, newRequest);
                 transaction().commitIfShortLived();
             });
-            addCacheControlHeaders(servletResponse, aclResource, transaction());
+            invalidateCachedRdfEtag();
+            try {
+                addCacheControlHeaders(servletResponse, getFedoraResource(transaction(), aclId), transaction());
+            } catch (final PathNotFoundException e) {
+                throw new PathNotFoundRuntimeException(e.getMessage(), e);
+            }
 
             return noContent().build();
         } catch (final IllegalArgumentException iae) {
