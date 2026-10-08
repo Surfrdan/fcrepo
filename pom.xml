@@ -59,7 +59,6 @@
     <javaee.xml.version>2.3.1</javaee.xml.version>
     <jaxb.version>4.0.5</jaxb.version>
     <jackson2.version>2.22.1</jackson2.version>
-    <jackson2.annotations.version>2.21</jackson2.annotations.version>
     <jena.version>5.5.0</jena.version>
     <jersey.version>3.1.11</jersey.version>
     <jetty.version>12.0.32</jetty.version>
@@ -68,7 +67,6 @@
     <maven.changelog.version>3.0.0-M2</maven.changelog.version>
     <micrometer.version>1.15.12</micrometer.version>
     <micrometer.jersey.version>1.8.13</micrometer.jersey.version>
-    <netty.version>4.1.131.Final</netty.version>
     <ocfl-java.version>2.2.1</ocfl-java.version>
     <prometheus.version>1.3.10</prometheus.version>
     <prometheus.jmx.version>1.0.1</prometheus.jmx.version>
@@ -120,6 +118,85 @@
   </modules>
   <dependencyManagement>
     <dependencies>
+      <!-- BOM imports. When two BOMs manage the same artifact, the first one listed wins;
+           explicit entries below override all imports. -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>${spring.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey</groupId>
+        <artifactId>jersey-bom</artifactId>
+        <version>${jersey.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.hk2</groupId>
+        <artifactId>hk2-bom</artifactId>
+        <version>${hk2.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>${jackson2.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.micrometer</groupId>
+        <artifactId>micrometer-bom</artifactId>
+        <version>${micrometer.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-bom</artifactId>
+        <version>${slf4j.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-bom</artifactId>
+        <version>${jetty.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-bom</artifactId>
+        <version>${jetty.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.grizzly</groupId>
+        <artifactId>grizzly-bom</artifactId>
+        <version>${grizzly.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${junit5.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-bom</artifactId>
+        <version>${mockito.junit5.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
         <groupId>jakarta.platform</groupId>
         <artifactId>jakarta.jakartaee-api</artifactId>
@@ -183,16 +260,6 @@
         </exclusions>
       </dependency>
       <dependency>
-        <groupId>org.glassfish.jersey.inject</groupId>
-        <artifactId>jersey-hk2</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.core</groupId>
-        <artifactId>jersey-server</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <dependency>
         <groupId>org.glassfish.jersey.ext</groupId>
         <artifactId>jersey-spring6</artifactId>
         <version>${jersey.version}</version>
@@ -214,37 +281,6 @@
             <artifactId>hk2</artifactId>
           </exclusion>
         </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.media</groupId>
-        <artifactId>jersey-media-json-jackson</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <!-- define these versions to make the hk2 versions consistent -->
-      <dependency>
-        <groupId>org.glassfish.hk2</groupId>
-        <artifactId>hk2</artifactId>
-        <version>${hk2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.hk2</groupId>
-        <artifactId>hk2-api</artifactId>
-        <version>${hk2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.hk2</groupId>
-        <artifactId>hk2-locator</artifactId>
-        <version>${hk2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.hk2</groupId>
-        <artifactId>hk2-utils</artifactId>
-        <version>${hk2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.hk2</groupId>
-        <artifactId>spring-bridge</artifactId>
-        <version>${hk2.version}</version>
       </dependency>
 
       <dependency>
@@ -358,26 +394,6 @@
         </exclusions>
       </dependency>
       <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${jackson2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-annotations</artifactId>
-        <version>${jackson2.annotations.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${jackson2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.fasterxml.jackson.datatype</groupId>
-        <artifactId>jackson-datatype-jsr310</artifactId>
-        <version>${jackson2.version}</version>
-      </dependency>
-      <dependency>
         <groupId>com.github.jsonld-java</groupId>
         <artifactId>jsonld-java</artifactId>
         <version>${jsonld.version}</version>
@@ -390,34 +406,14 @@
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${slf4j.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
         <artifactId>jcl-over-slf4j</artifactId>
         <version>${slf4j.version}</version>
         <scope>runtime</scope>
       </dependency>
       <dependency>
-        <groupId>io.micrometer</groupId>
-        <artifactId>micrometer-core</artifactId>
-        <version>${micrometer.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.micrometer</groupId>
-        <artifactId>micrometer-registry-prometheus</artifactId>
-        <version>${micrometer.version}</version>
-      </dependency>
-      <dependency>
         <groupId>io.prometheus</groupId>
         <artifactId>prometheus-metrics-core</artifactId>
         <version>${prometheus.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.ext</groupId>
-        <artifactId>jersey-micrometer</artifactId>
-        <version>${jersey.version}</version>
       </dependency>
       <dependency>
         <groupId>com.github.ben-manes.caffeine</groupId>
@@ -715,11 +711,6 @@
         <artifactId>grizzly-http-servlet</artifactId>
         <scope>test</scope>
         <version>${grizzly.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.containers</groupId>
-        <artifactId>jersey-container-grizzly2-http</artifactId>
-        <version>${jersey.version}</version>
       </dependency>
       <dependency>
         <groupId>org.glassfish.jersey.test-framework.providers</groupId>

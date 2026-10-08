@@ -79,42 +79,34 @@
     <dependency>
       <groupId>org.eclipse.jetty.ee10</groupId>
       <artifactId>jetty-ee10-webapp</artifactId>
-      <version>${jetty.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty.ee10</groupId>
       <artifactId>jetty-ee10-servlets</artifactId>
-      <version>${jetty.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-deploy</artifactId>
-      <version>${jetty.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
-      <version>${jetty.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-jmx</artifactId>
-      <version>${jetty.version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.hk2</groupId>
       <artifactId>hk2-api</artifactId>
-      <version>${hk2.version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.hk2</groupId>
       <artifactId>hk2-locator</artifactId>
-      <version>${hk2.version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.hk2</groupId>
       <artifactId>hk2-utils</artifactId>
-      <version>${hk2.version}</version>
     </dependency>
 
     <dependency>
